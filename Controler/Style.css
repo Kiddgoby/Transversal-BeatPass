@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:white; 
+    height: 100vh;
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    margin: 0;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #E6AE15;
+    height: 60px; 
+    padding: 0 20px;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+}
+
+header h1{
+    color: #0A0907;
+    margin: 0;
+    font-size: 24px;
+    width: 100%;
+    align-items: center;
+}
+article {
+    background: #fef8ec; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    margin-top: 80px; /* Espacio para evitar que el header lo cubra */
+}
+
+.pass, .gmail {
+    width: 100%;
+}
+
+#password, #gmail {
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #0A0907; 
+    background-color: #FBFBFB; 
+    color: #0A0907; 
+}
+
+.buttons {
+    width: 100%;
+}
+
+.buttons button {
+    background-color: #E6AE15; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #0A0907; 
+    font-weight: bold;
+}
+
+h1 {
+    color: #0A0907; 
+}
