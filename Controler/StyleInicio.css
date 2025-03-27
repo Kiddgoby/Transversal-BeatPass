@@ -1,9 +1,12 @@
 body{
     background-color: #fbf1d9;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-header{
+header {
     display: flex;
     margin: 0;
     background-color: #f5dca8;
@@ -11,40 +14,43 @@ header{
     height: 80px;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.izquierda img{
-    width: 70px;
-}
-
-header .izquierda{
+.izquierda {
     display: flex;
     align-items: center;
-
 }
-.izquierda h2{
-    margin: 0px;
-    padding-left: 10px;
 
+.izquierda img {
+    width: 200px;
+    height: auto;
+    margin-top: 22px;
+    margin-left: -15px;
+}
+
+.derecha {
+    display: flex;
+    gap: 20px;
 }
 
 header a {
     text-decoration: none;
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #666;
 }
 
 article{
     align-items: center;
-}
-
-/* article img{
     max-width: 1200px;
-    width: 80%;
-    display: block;
-    height: auto;
-    margin: 0 auto;
-} */
+    width: 100%;
+}
 
 .portada{
     position: relative;
@@ -67,4 +73,57 @@ article{
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 60px;
+}
+
+
+.imagenes-transitive {
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.grid-contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 3/4;
+    background-color: white;
+}
+
+.imagen-contenedor {
+    background-color: #e0e0e0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boton {
+    background-color: #666;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #444;
 }
