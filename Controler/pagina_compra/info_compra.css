@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    margin: 0;
+    background-color: #f5dca8;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.container {
+    width: 20%;
+    max-width: 1px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 column for vertical images, 2 columns for the large image */
+    gap: 20px;
+}
+
+
+.imagen-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for vertical images */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows for vertical images */
+    gap: 10px;
+}
+
+.imagen-container .imagen:nth-child(4) {
+    grid-column: 2; /* Position the 4th image in the second column */
+    grid-row: 1 / span 3; /* Span across all 3 rows */
+}
+
+.imagen {
+    background-color: #666;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+.info-artista h2 {
+    margin: 0 0 20px 0;
+}
+
+.info-artista p {
+    margin: 10px 0;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancelar, .compra {
+    padding: 10px 20px;
+    border: none;   
+    text-transform: lowercase;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancelar {
+    background-color: #666;
+    color: white;
+}
+
+.compra {
+    background-color: black;
+    color: white;
+}
