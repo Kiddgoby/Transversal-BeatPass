@@ -15,6 +15,36 @@ header {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
+
+.izquierda {
+    display: flex;
+    align-items: center;
+}
+
+.izquierda img {
+    width: 200px;
+    height: auto;
+    margin-top: 22px;
+    margin-left: -15px;
+}
+
+.derecha {
+    display: flex;
+    gap: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #666;
+}
+
 .container {
     width: 20%;
     max-width: 1px;
