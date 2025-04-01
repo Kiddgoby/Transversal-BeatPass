@@ -24,9 +24,9 @@ header {
 }
 
 .izquierda img {
-    width: 200px;
+    width: 125px;
     height: auto;
-    margin-top: 22px;
+    margin-top: 0px;
     margin-left: -15px;
 }
 
