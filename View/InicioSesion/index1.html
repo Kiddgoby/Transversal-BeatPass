@@ -18,15 +18,13 @@
 
     <main>
         <div class="container">
-            <!-- Título a la izquierda -->
             <div class="left-section">
                 <h1>Inicio de Sesión</h1>
             </div>
 
-            <!-- Formulario a la derecha -->
             <div class="right-section">
                 <img src="../logoBilleteArnau.png" alt="Logo Beat Pass">
-                <form action="Login">
+                <form action="login.php" method="POST">
                     <div class="input-group">
                         <label for="gmail">Correo electrónico:</label>
                         <input type="email" id="gmail" name="gmail" required>
@@ -38,7 +36,7 @@
                     </div>
 
                     <div class="buttons">
-                        <button type="submit">Iniciar Sesión</button>
+                        <button type="submit" name="Login">Iniciar Sesión</button>
                         <a href="Registro.html">
                             <button type="button">Registrarme</button>
                         </a>
