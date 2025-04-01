@@ -1,4 +1,4 @@
-/* 🔹 Estilos generales */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: white; 
@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-/* 🔹 Estilos del encabezado */
+/*  Estilos del encabezado */
 header {
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ header h1 {
     text-align: center;
 }
 
-/* 🔹 Contenedor principal */
+/*  Contenedor principal */
 .container {
     display: flex;
     justify-content: space-between; /* Separa los elementos */
@@ -43,7 +43,7 @@ header h1 {
     margin-top: 100px; /* Para evitar que el header lo tape */
 }
 
-/* 🔹 Sección izquierda (Título) */
+/*  Sección izquierda (Título) */
 .left-section {
     flex: 1;
     text-align: left;
@@ -52,20 +52,14 @@ header h1 {
     color: #0A0907;
 }
 
-/* 🔹 Sección derecha (Formulario) */
+/*  Sección derecha (Formulario) */
 .right-section {
     flex: 1;
     text-align: center;
 }
 
-/* 🔹 Imagen */
-.right-section img {
-    height: 60px;
-    display: block;
-    margin: 0 auto 20px;
-}
 
-/* 🔹 Estilos del formulario */
+/*  Estilos del formulario */
 .input-group {
     margin-bottom: 15px;
     text-align: left;
@@ -87,7 +81,7 @@ header h1 {
     color: #0A0907;
 }
 
-/* 🔹 Botones */
+/*  Botones */
 .buttons {
     text-align: center;
     margin-top: 20px;
@@ -107,4 +101,12 @@ header h1 {
 
 .buttons button:hover {
     background-color: #D49C10;
+}
+
+main{
+    margin-top: 100px;
+}
+
+a{
+    text-decoration: none;
 }
