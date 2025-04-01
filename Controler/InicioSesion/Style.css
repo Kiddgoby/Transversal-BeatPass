@@ -1,14 +1,15 @@
+/* 🔹 Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color:white; 
+    background-color: white; 
     height: 100vh;
     display: flex;
-    justify-content: column;
+    flex-direction: column;
     align-items: center;
     margin: 0;
-    flex-direction: column;
 }
 
+/* 🔹 Estilos del encabezado */
 header {
     display: flex;
     align-items: center;
@@ -24,49 +25,86 @@ header {
     z-index: 1000; 
 }
 
-header h1{
+header h1 {
     color: #0A0907;
     margin: 0;
     font-size: 24px;
-    width: 100%;
-    align-items: center;
-}
-article {
-    background: #fef8ec; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 400px;
-    margin-top: 80px; /* Espacio para evitar que el header lo cubra */
 }
 
-.pass, .gmail {
+/* 🔹 Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between; /* Separa los elementos */
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+    margin-top: 100px; /* Para evitar que el header lo tape */
+}
+
+/* 🔹 Sección izquierda (Título) */
+.left-section {
+    flex: 1;
+    text-align: left;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0A0907;
+}
+
+/* 🔹 Sección derecha (Formulario) */
+.right-section {
+    flex: 1;
+    text-align: center;
+}
+
+/* 🔹 Imagen */
+.right-section img {
+    height: 60px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* 🔹 Estilos del formulario */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    color: #0A0907;
+}
+
+.input-group input {
     width: 100%;
-}
-
-#password, #gmail {
-    border-radius: 5px;
-    padding: 5px;
-    width: 300px;
+    max-width: 300px;
+    padding: 8px;
     border: 1px solid #0A0907; 
+    border-radius: 5px;
     background-color: #FBFBFB; 
-    color: #0A0907; 
+    color: #0A0907;
 }
 
+/* 🔹 Botones */
 .buttons {
-    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .buttons button {
     background-color: #E6AE15; 
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
     color: #0A0907; 
     font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s ease;
 }
 
-h1 {
-    color: #0A0907; 
+.buttons button:hover {
+    background-color: #D49C10;
 }
