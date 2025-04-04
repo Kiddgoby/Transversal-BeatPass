@@ -100,12 +100,13 @@ header h1 {
 }
 
 .buttons button:hover {
-    background-color: #D49C10;
+    background-color: #75602c;
 }
 
 main{
     margin-top: 100px;
 }
+
 
 a{
     text-decoration: none;
