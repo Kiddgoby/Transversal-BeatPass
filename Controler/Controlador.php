@@ -27,8 +27,10 @@
 
     }
 
-    Class UserController
+    class UserController
     {
+
+        
         private $conn;
         public function login($gmail, $password)
         {
