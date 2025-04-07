@@ -1,60 +1,65 @@
 <?php
- 
- session_start();
- 
-    if ($_SERVER["REQUEST_METHOD"]== "POST"){
-        $user = new UserController();
+session_start();
 
-        if (isset($_POST["Login"])) {
-            $gmail = $_POST["gmail"];
-            $password = $_POST["password"];
-    
-            if ($user->login($gmail, $password)) {
-                echo "<p>Inicio de sesión exitoso.</p>";
-            } else {
-                echo "<p>Correo o contraseña incorrectos.</p>";
-            }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $gmail = $_POST["gmail"];
+    $password = $_POST["password"];
 
-        if (isset($_Post["Logout"])){
-            echo "<p> Logout Button is clicked.</p>";
-            $user->logout();
+    $user = new UserController($gmail, $password);
+
+    if (isset($_POST["Login"])) {
+        if ($user->login($gmail, $password)) {
+            header("Location: ../View/Inicio/inicio.html");
+            exit;
+        } else {
+            echo "<p>Correo o contraseña incorrectos.</p>";
         }
-
-        if (isset($_Post["Register"])){
-            echo "<p> Regiter Button is clicked.</p>";
-            $user->register();
-        }
-
     }
 
-    class UserController
-    {
+    // if (isset($_POST["Logout"])) {
+    //     echo "<p>Logout Button is clicked.</p>";
+    //     $user->logout();
+    // }
 
-        
-        private $conn;
-        public function login($gmail, $password)
-        {
-            // Datos de acceso simulados
-            $userGmail = "abcd@gmail.com";
-            $userPassword = "1234";
-    
-            if ($gmail == $userGmail && $password == $userPassword) {
-                return true;
-            } else {
-                return false;
-            }
-
-    }
-
-    public function logout(){
-
-
-    }
-
-    public function register(){
-
+    if (isset($_POST["Register"])) {
+        echo "<p>Register Button is clicked.</p>";
+        $user->register();
     }
 }
+
+class UserController
+{
+    private $conn;
+    private $gmail;
+    private $password;
+
+    public function __construct($gmail, $password)
+    {
+        $this->gmail = $gmail;
+        $this->password = $password;
     }
 
-    
+    public function login($gmail, $password): bool
+    {
+        $userGmail = "abcd@gmail.com";
+        $userPassword = "1234";
+
+        return $gmail === $userGmail && $password === $userPassword;
+    }
+
+    public function get_gmail(): mixed
+    {
+        return $this->gmail;
+    }
+
+    // private function logout(): void
+    // {
+    //     echo "Sesión cerrada.";
+    // }
+
+    public function register(): void
+    {
+        echo "Usuario registrado.";
+    }
+}
+?>
