@@ -1,7 +1,8 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: white; 
+    background-color: #121212; 
+    color: #f4f4f4;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,7 +16,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #E6AE15;
+    background-color: #1e1e2f;
     height: 60px; 
     padding: 0 20px;
     position: fixed; 
@@ -26,7 +27,7 @@ header {
 }
 
 header h1 {
-    color: #0A0907;
+    color: #c084fc;
     margin: 0;
     font-size: 24px;
     text-align: center;
@@ -35,12 +36,12 @@ header h1 {
 /*  Contenedor principal */
 .container {
     display: flex;
-    justify-content: space-between; /* Separa los elementos */
+    justify-content: space-between;
     align-items: center;
     width: 80%;
     max-width: 900px;
     padding: 20px;
-    margin-top: 100px; /* Para evitar que el header lo tape */
+    margin-top: 100px;
 }
 
 /*  Sección izquierda (Título) */
@@ -49,7 +50,7 @@ header h1 {
     text-align: left;
     font-size: 28px;
     font-weight: bold;
-    color: #0A0907;
+    color: #f4f4f4;
 }
 
 /*  Sección derecha (Formulario) */
@@ -57,7 +58,6 @@ header h1 {
     flex: 1;
     text-align: center;
 }
-
 
 /*  Estilos del formulario */
 .input-group {
@@ -68,17 +68,17 @@ header h1 {
 .input-group label {
     display: block;
     font-weight: bold;
-    color: #0A0907;
+    color: #f4f4f4;
 }
 
 .input-group input {
     width: 100%;
     max-width: 300px;
     padding: 8px;
-    border: 1px solid #0A0907; 
+    border: 1px solid #888;
     border-radius: 5px;
-    background-color: #FBFBFB; 
-    color: #0A0907;
+    background-color: #1e1e2f;
+    color: #f4f4f4;
 }
 
 /*  Botones */
@@ -88,11 +88,11 @@ header h1 {
 }
 
 .buttons button {
-    background-color: #E6AE15; 
+    background-color: #c084fc; 
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    color: #0A0907; 
+    color: #1e1e2f;
     font-weight: bold;
     cursor: pointer;
     margin: 5px;
@@ -100,14 +100,14 @@ header h1 {
 }
 
 .buttons button:hover {
-    background-color: #75602c;
+    background-color: #a855f7;
 }
 
-main{
+main {
     margin-top: 100px;
 }
 
-
-a{
+a {
     text-decoration: none;
+    color: #c084fc;
 }
