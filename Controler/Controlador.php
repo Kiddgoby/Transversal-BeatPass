@@ -72,7 +72,6 @@ class UserController
         
     private function logout(): void
     {
-    session_start();
     session_unset(); // Borra todas las variables de sesión
     session_destroy(); // Destruye la sesión
     echo "Sesión cerrada.";
