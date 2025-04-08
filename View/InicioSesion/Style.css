@@ -1,8 +1,17 @@
+/* Variables personalizadas USAR SIEMPRE EN CASO DE NECESITAR UNA SE CREA ( --nombre-vraiable ) */
+:root{
+    --Color-principal: #1c1c1c;
+    --Color-secundario: #38385f;
+    --Color-secundario-flojo: #6f6dbe;
+    --Color-letras:rgb(255, 255, 255);
+    --Color-bg-l:#1e1e2f;
+}
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; 
-    color: #f4f4f4;
+    background-color: var(--Color-principal); 
+    color: var(--Color-letras);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,7 +25,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #1e1e2f;
+    background-color: var(--Color-secundario);
     height: 60px; 
     padding: 0 20px;
     position: fixed; 
@@ -27,7 +36,7 @@ header {
 }
 
 header h1 {
-    color: #c084fc;
+    color: var(--Color-principal);
     margin: 0;
     font-size: 24px;
     text-align: center;
@@ -50,7 +59,7 @@ header h1 {
     text-align: left;
     font-size: 28px;
     font-weight: bold;
-    color: #f4f4f4;
+    color: var(--Color-letras);
 }
 
 /*  Sección derecha (Formulario) */
@@ -68,7 +77,7 @@ header h1 {
 .input-group label {
     display: block;
     font-weight: bold;
-    color: #f4f4f4;
+    color: var(--Color-letras);
 }
 
 .input-group input {
@@ -77,8 +86,8 @@ header h1 {
     padding: 8px;
     border: 1px solid #888;
     border-radius: 5px;
-    background-color: #1e1e2f;
-    color: #f4f4f4;
+    background-color: var(--Color-bg-l);
+    color: var(--Color-letras);
 }
 
 /*  Botones */
@@ -88,7 +97,7 @@ header h1 {
 }
 
 .buttons button {
-    background-color: #c084fc; 
+    background-color: var(--Color-secundario-flojo); 
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -100,7 +109,7 @@ header h1 {
 }
 
 .buttons button:hover {
-    background-color: #a855f7;
+    background-color: var(--Color-secundario-flojo);
 }
 
 main {
@@ -109,5 +118,5 @@ main {
 
 a {
     text-decoration: none;
-    color: #c084fc;
+    color: var(--Color-secundario-flojo);
 }

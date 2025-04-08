@@ -1,5 +1,14 @@
+/* Variables personalizadas USAR SIEMPRE EN CASO DE NECESITAR UNA SE CREA ( --nombre-vraiable ) */
+:root{
+    --Color-principal: #1c1c1c;
+    --Color-secundario: #38385f;
+    --Color-secundario-flojo: #6f6dbe;
+    --Color-letras:rgb(255, 255, 255);
+}
+
+/* Body */
 body {
-    background-color: #121212;
+    background-color: var(--Color-principal);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -7,10 +16,11 @@ body {
     color: #f4f4f4;
 }
 
+/* Header */
 header {
     display: flex;
     margin: 0;
-    background-color: #1e1e2f;
+    background-color: var(--Color-secundario);
     width: 100%;
     height: 80px;
     align-items: center;
@@ -46,6 +56,8 @@ header a {
 header a:hover {
     color: #c084fc;
 }
+/* Fin header */
+
 
 article {
     align-items: center;
@@ -71,15 +83,21 @@ article {
     top: 20%;
     left: 30%;
     right: 30%;
-    color: #f4f4f4;
+    color: #f4f4f487;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 60px;
+
 }
 
-.imagenes-transitive {
-    padding: 20px;
-    width: 100%;
-    max-width: 1000px;
+/* Esto es una clase que se usara Para los botones SOLO a */
+.botonDefecto{
+    display: inline-block;
+    background-color:var(--Color-secundario-flojo);
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .grid-contenedor {
@@ -93,7 +111,7 @@ article {
     display: flex;
     flex-direction: column;
     aspect-ratio: 3/4;
-    background-color: #1e1e2f;
+    background-color: var(--Color-secundario);
 }
 
 .imagen-contenedor {
@@ -112,8 +130,8 @@ article {
 }
 
 .boton {
-    background-color: #c084fc;
-    color: #1e1e2f;
+    background-color: var(--Color-secundario);
+    color: white;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -145,7 +163,7 @@ article {
 
 .card {
     width: 300px;
-    background-color: #1e1e2f;
+    background-color: var(--Color-secundario);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
     overflow: hidden;
@@ -180,16 +198,16 @@ article {
     color: #ccc;
 }
 
-.card a.btn {
+/* .card a.btn {
     display: inline-block;
-    background-color: #c084fc;
-    color: #1e1e2f;
+    background-color:var(--Color-secundario-flojo);
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
-}
+} */
 
 .card a.btn:hover {
-    background-color: #a855f7;
+    background-color: var(--Color-secundario);
 }

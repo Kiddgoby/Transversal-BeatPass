@@ -1,47 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Evento</title>
+    <title>BeatPass</title>
     <link rel="stylesheet" href="info_compra.css">
 </head>
-
-<header>
-    <div class="izquierda">
-        <img src="..\logoBilleteArnau.png" alt="">
-    </div>
-
-    <div class="derecha">
-        <a href="">Eventos</a>
-        <a href="">Lugares</a>
-        <a href="">Cuenta</a>
-    </div>
-</header>
-<div>
-    <div class="container">
-        <div class="imagen-container">
-            <div class="imagen"></div>
-            <div class="imagen"></div>
-            <div class="imagen"></div>
-            <div class="imagen"></div>
+<body>
+    <header>
+        <div class="izquierda">
+            <a href="../Inicio/inicio.html">
+                <img src="../logoBilleteArnau.png" alt="">
+            </a>
         </div>
-    </div>
-
-
-    <div class="caja">
-        <div class="detalles">
-            <div class="info-artista">
-                <h2>Nombre artista</h2>
-                <p>Precio Evento: ........</p>
-                <p>Ubicacion Evento: ........</p>
-                <p>Hora Evento: ........</p>
-            </div>
-            <div class="botones">
-                <button class="cancelar">cancelar</button>
-                <button class="compra">compra</button>
-            </div>
+        <div class="derecha">
+            <a href="">Eventos</a>
+            <a href="">Lugares</a>
+            <a href="cuenta.php">Cuenta</a>  
+            <a href="cerrar_sesion.php">Cerrar sesión</a>     
         </div>
-    </div>
+    </header>
+
+    <article class="all">
+        <section class="img">
+            <img src="../../Imagenes_A_Usar/pancartaPedro.jpg" alt="">
+
+        </section>
+        <!-------------------------------------------------------------->
+        <section class="MoreInfo">
+
+
+        </section>
+
+        <!------------------------------------------------------------>
+        <section class="info">
+            <form action="../../Controler/Controlador.php" method="POST">
+                <div class="input-group">
+                    <label for="text">Nombre:</label>
+                    <input type="nombre" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="gmail">Correo electrónico:</label>
+                    <input type="email" id="gmail" name="gmail" required >
+                </div>
+            
+                <div class="input-group">
+                    <label for="password">Numero de Telefeno:</label>
+                    <input type="Telefeno" id="Telefeno" name="Telefeno" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="text">Nuemor tarjeta de credito:</label>
+                    <input type="email" id="gmail" name="gmail" required >
+                </div>
+            
+                <div class="input-group">
+                    <label for="text">CVC:</label>
+                    <input type="Telefeno" id="Telefeno" name="Telefeno" required>
+                </div>
+
+				<div class="input-group">
+                    <label for="text">Fecha de caducidad:</label>
+                    <input type="date" id="nombre" name="nombre" required>
+                </div>
+				
+                <div class="buttons">
+                    <button type="submit" name="Login" class="button">Iniciar Sesión</button>
+                    <button type="submit" name="Register">Registrarme</button>
+                </div>
+            </form>
+        </section>
+    </article>
 </body>
 </html>
