@@ -37,20 +37,33 @@ class UserController
     {
         $this->gmail = $gmail;
         $this->password = $password;
+
+        // Conexión a la base de datos
+        $this->conn = new mysqli("localhost", "root", "BeatPass1234", "beatpass");
+
+        if ($this->conn->connect_error) {
+            die("Conexión fallida: " . $this->conn->connect_error);
+        }
     }
 
-    public function login($gmail, $password): bool
+    public function login(): bool
     {
-        $userGmail = "abcd@gmail.com";
-        $userPassword = "1234";
+        $stmt = $this->conn->prepare("SELECT contrasena FROM usuarios WHERE gmail = ?");
+        $stmt->bind_param("s", $this->gmail);
+        $stmt->execute();
+        $stmt->store_result();
 
-        return $gmail === $userGmail && $password === $userPassword;
-    }
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($hash);
+            $stmt->fetch();
 
-    public function get_gmail(): mixed
-    {
-        return $this->gmail;
+            return password_verify($this->password, $hash);
+        } else {
+            return false;
+        }
+
     }
+    
 
     // private function logout(): void
     // {
