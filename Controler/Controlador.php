@@ -2,13 +2,13 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $gmail = $_POST["gmail"];
+    $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $user = new UserController($gmail, $password);
+    $user = new UserController($email, $password);
 
     if (isset($_POST["Login"])) {
-        if ($user->login($gmail, $password)) {
+        if ($user->login($email, $password)) {
             header("Location: ../View/Inicio/inicio.html");
             exit;
         } else {
@@ -30,16 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 class UserController
 {
     private $conn;
-    private $gmail;
+    private $email;
     private $password;
 
-    public function __construct($gmail, $password)
+    public function __construct($email, $password)
     {
-        $this->gmail = $gmail;
+        $this->email = $email;
         $this->password = $password;
 
         // Conexión a la base de datos
-        $this->conn = new mysqli("localhost", "root", "BeatPass1234", "beatpass");
+        $this->conn = new mysqli("localhost", "root", "", "beatpass");
 
         if ($this->conn->connect_error) {
             die("Conexión fallida: " . $this->conn->connect_error);
@@ -48,8 +48,8 @@ class UserController
 
     public function login(): bool
     {
-        $stmt = $this->conn->prepare("SELECT contrasena FROM usuarios WHERE gmail = ?");
-        $stmt->bind_param("s", $this->gmail);
+        $stmt = $this->conn->prepare("SELECT contrasena FROM usuarios WHERE email = ?");
+        $stmt->bind_param("s", $this->email);
         $stmt->execute();
         $stmt->store_result();
 
@@ -65,11 +65,7 @@ class UserController
     }
     
 
-    // private function logout(): void
-    // {
-    //     echo "Sesión cerrada.";
-    // }
-        
+
     private function logout(): void
     {
     session_unset(); // Borra todas las variables de sesión
@@ -83,7 +79,32 @@ class UserController
 
     public function register(): void
     {
-        echo "Usuario registrado.";
+        $hash = password_hash($this->password, PASSWORD_DEFAULT);
+
+        // Comprobar si ya existe
+        $check = $this->conn->prepare("SELECT id FROM usuarios WHERE gmail = ?");
+        $check->bind_param("s", $this->email);
+        $check->execute();
+        $check->store_result();
+
+        if ($check->num_rows > 0) {
+            echo "<p>⚠️ Este correo ya está registrado.</p>";
+            return;
+        }
+
+        $stmt = $this->conn->prepare("INSERT INTO usuarios (gmail, contrasena) VALUES (?, ?)");
+        $stmt->bind_param("ss", $this->email, $hash);
+
+        if ($stmt->execute()) {
+            echo "<p>✅ Usuario registrado correctamente.</p>";
+        } else {
+            echo "<p>❌ Error al registrar: " . $stmt->error . "</p>";
+        }
+
+  
     }
+
+
 }
+
 ?>
