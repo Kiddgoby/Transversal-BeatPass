@@ -50,40 +50,28 @@ article {
     margin-top: 80px; /* Espacio para evitar que el header lo cubra */
 }
 
-.pass, .gmail, .nameN, .Cpassword {
-    width: 100%;
-}
-
-#password, #nameN, #gmail, #Cpassword {
-    border-radius: 5px;
-    padding: 5px;
-    width: 300px;
-    border: 1px solid #0A0907; 
-    background-color: #FBFBFB; 
-    color: #0A0907; 
-}
-
 .buttons {
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.buttonN {
-    background-color: var(--Color-secundario); 
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    color: var(--Color-letras); 
-    font-weight: bold;
+.botonDefecto{
+    display: inline-block;
+    background-color:var(--Color-secundario);
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.botonDefecto:hover{
+    transform: translateY(-2px);
 }
 
 h1 {
     color: #0A0907; 
-}
-
-.input-group label {
-    display: block;
-    font-weight: bold;
-    color: var(--Color-letras);
 }
 
 .input-group input {
