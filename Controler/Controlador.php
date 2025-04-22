@@ -64,21 +64,31 @@ class UserController
     public function login(): bool
     {
         //nombre de campo form
-        $email = trim($_POST[""]);
-        $passowrd = trim($_POST[""]);
+        $email = trim($_POST["email"]);
+        $password = trim($_POST["password"]);
 
         $query = "SELECT email, contrasena FROM usuarios WHERE email = ? and contrasena = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ss", $email, $passowrd);
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
-        $stmt->store_result();
+        $result = $stmt->get_result();
 
-        if ($stmt->num_rows > 0) {
-            $stmt->bind_result($hash);
-            $stmt->fetch();
+        if ($row = $result->fetch_assoc()) {
+            $_SESSION ["logged"] = true;
+            $_SESSION ["email"] = $row ["email"];
+            $_SESSION ["password"] = $row ["password"];
 
-            return password_verify($this->password, $hash);
+            $this->conn->close();
+            
+            header(header: "Location: ../view/Inicio/Inicio.html");
+            
+            return true;
+
         } else {
+            $_SESSION ["logged"] = false;
+            $_SESSION ["Login_Error"] = "Email or password are wrong";
+            $this->conn->close();
+            header(header: "Location: ../view/InicioSesion/Index.html");
             return false;
         }
 
@@ -97,31 +107,49 @@ class UserController
 
         
 
-    public function singup(): void
+    //falta acabar
+    //falta acabar
+    //falta acabar
+    //falta acabar
+    //falta acabar
+    //falta acabar
+    //falta acabar
+    //falta acabar
+    public function singup(): bool
     {
-        $hash = password_hash($this->password, PASSWORD_DEFAULT);
+        //nombre de campo form
+        $nameN = trim($_POST["nameN"]);
+        $email = trim($_POST["email"]);
+        $password = trim($_POST["password"]);
+        $cpassword =trim($_POST["cpassword"]);
 
-        // Comprobar si ya existe
-        $check = $this->conn->prepare("SELECT id FROM usuarios WHERE gmail = ?");
-        $check->bind_param("s", $this->email);
-        $check->execute();
-        $check->store_result();
 
-        if ($check->num_rows > 0) {
-            echo "<p>Este correo ya está registrado.</p>";
-            return;
+        if ($password !== $cpassword){
+        
+            echo "Las contraseñas no coinciden";
+            return false;
+        };
+
+        $query = " INSERT INTO usuarios (nameN, email, contrasena) VALUES (?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+
+        if (!$stmt) {
+            echo "Error al preparar la consulta: " . $this->conn->error;
+            return false;
         }
-
-        $stmt = $this->conn->prepare("INSERT INTO usuarios (gmail, contrasena) VALUES (?, ?)");
-        $stmt->bind_param("ss", $this->email, $hash);
-
+    
+        $stmt->bind_param("sss", $nameN, $email, $password);
+    
         if ($stmt->execute()) {
-            echo "<p>Usuario registrado correctamente.</p>";
+            $_SESSION ["Singed"] = true;
+            header("Location: ../view/InicioSesion/index.html");
+            return true;
+        
         } else {
-            echo "<p>Error al registrar: " . $stmt->error . "</p>";
+            $_SESSION ["Singed"] = false;
+            echo "Error al registrar: " . $stmt->error;
+            return false;
         }
-
-  
     }
 
 
