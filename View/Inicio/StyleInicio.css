@@ -4,6 +4,7 @@
     --Color-secundario: #38385f;
     --Color-secundario-flojo: #6f6dbe;
     --Color-letras:rgb(255, 255, 255);
+    --fuente-lligada:"fairprosper", Helvetica ,Arial, sans-serif;
 }
 
 /* Body */
@@ -187,7 +188,8 @@ article {
 }
 
 .card-title {
-    font-size: 22px;
+    font-size:  calc(1.5rem);
+    font-family: var(--fuente-lligada);
     margin-bottom: 10px;
     color: #f4f4f4;
 }
