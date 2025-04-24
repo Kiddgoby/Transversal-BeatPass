@@ -32,3 +32,78 @@ Usa <map> y <area> para crear zonas clicables en la imagen.
 
 Cada zona lleva a eventos.php?ciudad=valencia por ejemplo.
 -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de Tipografías</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;600&family=Oswald:wght@400;600&family=Poppins&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: white;
+            font-size: 16px;
+            padding: 2rem;
+            font-family: sans-serif;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #555;
+            padding-bottom: 2rem;
+        }
+
+        .titulo {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .info {
+            font-size: 1.3rem;
+            color: #ccc;
+        }
+
+        /* Estilos por combinación */
+        .combo1 .titulo { font-family: 'Bebas Neue', sans-serif; }
+        .combo1 .subtitulo { font-family: 'Oswald', sans-serif; }
+        .combo1 .info { font-family: 'Montserrat', sans-serif; }
+
+        .combo2 .titulo { font-family: 'Anton', sans-serif; }
+        .combo2 .subtitulo { font-family: 'Barlow Condensed', sans-serif; }
+        .combo2 .info { font-family: 'Poppins', sans-serif; }
+
+        .combo3 .titulo { font-family: 'Orbitron', sans-serif; }
+        .combo3 .subtitulo { font-family: 'Oswald', sans-serif; }
+        .combo3 .info { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">💡 Prueba de Tipografías</h1>
+
+    <section class="combo1">
+        <div class="titulo">Título: Bebas Neue</div>
+        <div class="subtitulo">Subtítulo: Oswald</div>
+        <div class="info">Este texto está usando Montserrat. Ideal para contenido extenso y buena legibilidad.</div>
+    </section>
+
+    <section class="combo2">
+        <div class="titulo">Título: Anton</div>
+        <div class="subtitulo">Subtítulo: Barlow Condensed</div>
+        <div class="info">Esta combinación usa Poppins para el contenido, una fuente redondeada y moderna.</div>
+    </section>
+
+    <section class="combo3">
+        <div class="titulo">Título: Orbitron</div>
+        <div class="subtitulo">Subtítulo: Oswald</div>
+        <div class="info">Orbitron da un aire más digital o futurista. Perfecta para temas de electrónica o trap experimental.</div>
+    </section>
+
+</body>
+</html>

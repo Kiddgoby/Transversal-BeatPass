@@ -6,6 +6,17 @@
     --Color-letras: rgb(255, 255, 255);
 }
 
+.titulo{
+    font-size: 3rem;
+}
+
+.subtitulo{
+    font-size: 2rem;
+}
+
+.info{
+    font-size: 1.5rem;
+}
 /* Body */
 body {
     background-color: var(--Color-principal);
@@ -72,6 +83,11 @@ section.img img {
     width: 30rem;
     height: auto;
     object-fit: cover;
+}
+
+section.more-info{
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /* Estilos del formulario */
