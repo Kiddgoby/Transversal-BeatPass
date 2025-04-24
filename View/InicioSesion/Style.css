@@ -1,16 +1,29 @@
 /* Variables personalizadas USAR SIEMPRE EN CASO DE NECESITAR UNA SE CREA ( --nombre-vraiable ) */
-:root{
+:root {
     --Color-principal: #1c1c1c;
-    --Color-secundario: #38385f;
+    --Color-secundario: #494979;
     --Color-secundario-flojo: #6f6dbe;
-    --Color-letras:rgb(255, 255, 255);
-    --Color-bg-l:#1e1e2f;
+    --Color-letras: rgb(255, 255, 255);
+    --Color-bg-l: #1e1e2f;
+}
+
+/* Fuentes */
+.titulo {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.subtitulo {
+    font-family: 'Oswald', sans-serif;
+}
+
+.info {
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Color-principal); 
+    background-color: var(--Color-principal);
     color: var(--Color-letras);
     height: 100vh;
     display: flex;
@@ -19,30 +32,30 @@ body {
     margin: 0;
 }
 
-/*  Estilos del encabezado */
+/* Estilos del encabezado */
 header {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     background-color: var(--Color-secundario);
-    height: 60px; 
+    height: 60px;
     padding: 0 20px;
-    position: fixed; 
-    top: 0; 
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 header h1 {
     color: var(--Color-principal);
     margin: 0;
-    font-size: 24px;
+    font-size: 4rem;
     text-align: center;
 }
 
-/*  Contenedor principal */
+/* Contenedor principal */
 .container {
     display: flex;
     justify-content: space-between;
@@ -53,7 +66,7 @@ header h1 {
     margin-top: 100px;
 }
 
-/*  Sección izquierda (Título) */
+/* Sección izquierda (Título) */
 .left-section {
     flex: 1;
     text-align: left;
@@ -62,13 +75,7 @@ header h1 {
     color: rgba(255, 255, 255, 0.822);
 }
 
-/*  Sección derecha (Formulario) */
-.right-section {
-    flex: 1;
-    text-align: center;
-}
-
-/*  Estilos del formulario */
+/* Estilos del formulario */
 .input-group {
     margin-bottom: 15px;
     text-align: left;
@@ -90,18 +97,19 @@ header h1 {
     color: var(--Color-letras);
 }
 
-/*  Botones */
+/* Botones */
 .buttons {
     text-align: center;
     margin-top: 20px;
 }
-button:hover{
+
+button:hover {
     transform: translateY(-0.1rem);
     box-shadow: 0 0.4rem 1rem #874ac0ad;
 }
 
 .buttons button {
-    background-color: var(--Color-secundario-flojo); 
+    background-color: var(--Color-secundario-flojo);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;

@@ -1,12 +1,26 @@
 /* Variables personalizadas */
 :root{
     --Color-principal: #1c1c1c;
-    --Color-secundario: #38385f;
+    --Color-secundario: #494979;
     --Color-secundario-flojo: #6f6dbe;
     --Color-letras: rgb(255, 255, 255);
-    --Color-bg-l:#1e1e2f;
+    --Color-bg-l: #1e1e2f;
 }
 
+/* Fuentes */
+.titulo {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.subtitulo {
+    font-family: 'Oswald', sans-serif;
+}
+
+.info {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--Color-principal);
@@ -18,30 +32,30 @@ body {
 }
 
 header {
-        display: flex; /* Asegura que flexbox esté activo */
-        justify-content: space-between; /* Distribuye los elementos */
-        align-items: center;
-        width: 100%;
-        background-color: var(--Color-secundario);
-        height: 60px; 
-        padding: 0 20px;
-        position: fixed; 
-        top: 0; 
-        left: 0;
-        right: 0;
-        z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--Color-secundario);
+    height: 60px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 header h1 {
     color: var(--Color-principal);
     margin: 0;
-    font-size: 24px;
+    font-size: 4rem;
     width: 100%;
     text-align: center;
 }
 
 article {
-    background: var(--Color-secundario-flojo); 
+    background: var(--Color-secundario-flojo);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -56,22 +70,23 @@ article {
     justify-content: space-evenly;
 }
 
-.botonDefecto{
+.botonDefecto {
     display: inline-block;
-    background-color:var(--Color-secundario);
+    background-color: var(--Color-secundario);
     color: white !important;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.botonDefecto:hover{
+.botonDefecto:hover {
     transform: translateY(-2px);
+    background-color: var(--Color-secundario-flojo);
 }
 
 h1 {
-    color: #0A0907; 
+    color: #0A0907;
 }
 
 .input-group input {
@@ -82,4 +97,26 @@ h1 {
     border-radius: 5px;
     background-color: var(--Color-bg-l);
     color: var(--Color-letras);
+}
+
+.buttons button {
+    background-color: var(--Color-secundario);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #1e1e2f;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+.buttons button:hover {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.4rem 1rem #874ac0ad;
+}
+
+a {
+    text-decoration: none;
+    color: var(--Color-secundario-flojo);
 }
