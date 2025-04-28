@@ -1,46 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="icon" type="image/png" href="logoBilleteArnau.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beat Pass</title>
-    <link rel="stylesheet" href="StyleR.css">
+<!DOCTYPE html> <!-- Define el tipo de documento (HTML5) -->
+<html lang="en"> <!-- Comienza el documento en inglés -->
 
-    <!-- Fuentes -->
+<head>
+    <link rel="icon" type="image/png" href="logoBilleteArnau.png"> <!-- Icono de pestaña -->
+    <meta charset="UTF-8"> <!-- Configura la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive en móviles -->
+    <title>Beat Pass</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="StyleR.css"> <!-- Vincula el archivo CSS externo -->
+
+    <!-- Carga de fuentes desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
+
+<body> <!-- Comienza el cuerpo de la página -->
+
+    <header> <!-- Encabezado fijo superior -->
         <h1 class="titulo">Beat Pass</h1>
     </header>
     
-    <article>
+    <article class="container"> <!-- Contenedor principal -->
         <h1 class="titulo">Bienvenido a Beat Pass</h1>
-        <form action="Login">
+        
+        <form action="Login"> <!-- Formulario de registro (action aún sin definir) -->
             <h3 class="subtitulo">Registro</h3>
-            
-            <div class="input-group">
-                <input type="text" id="nameN" name="nameN" placeholder="Nombre de usuario"><br><br>
+
+            <div class="datos"> <!-- Agrupación de campos de entrada -->
+                <div class="input-group">
+                    <input type="text" id="nameN" name="nameN" placeholder="Nombre de usuario">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="gmail" name="gmail" placeholder="Correo Electrónico">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Contraseña">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="Cpassword" name="Cpassword" placeholder="Confirmar contraseña">
+                </div>
             </div>
-            <div class="input-group">
-                <input type="email" id="gmail" name="gmail" placeholder="Correo Electrónico"><br><br>
-            </div>
-            <div class="input-group">
-                <input type="password" id="password" name="password" placeholder="Contraseña"><br><br>
-            </div>
-            <div class="input-group">
-                <input type="password" id="Cpassword" name="Cpassword" placeholder="Confirmar contraseña"><br><br>
-            </div>
-            <div class="buttons">
-                
+
+            <div class="buttons"> <!-- Botones de acciones -->
                 <button type="submit" name="Singup" id="Singup" class="button">Registrarse</button>
 
-                <a href="../InicioSesion/index1.html">
+                <a href="../InicioSesion/index1.html"> <!-- Link a página de login -->
                     <button type="submit" name="Login" id="Login" class="button">Iniciar Sesión</button>
                 </a>
             </div>
+
         </form>
     </article>
+
+    <br> <!-- Salto de línea -->
+    
+    <footer> <!-- Pie de página -->
+        <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
+    </footer> 
+
 </body>
 </html>

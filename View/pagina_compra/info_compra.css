@@ -1,119 +1,115 @@
-/* Variables personalizadas */
-:root{
+:root {
     --Color-principal: #1c1c1c;
     --Color-secundario: #494979;
     --Color-secundario-flojo: #6f6dbe;
     --Color-letras: rgb(255, 255, 255);
 }
 
-/* Aplicando fuentes globalmente */
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--Color-principal);
-    margin: 0;
+    color: var(--Color-letras);
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #f4f4f4;
-    font-family: 'Montserrat', sans-serif; /* Fuente predeterminada */
-}
-
-/* Estilo para los títulos */
-.titulo {
-    font-family: 'Bebas Neue', sans-serif; /* Fuente Bebas Neue */
-    font-size: 3rem;
-}
-
-.subtitulo {
-    font-family: 'Oswald', sans-serif; /* Fuente Oswald */
-    font-size: 2rem;
-}
-
-.info {
-    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
-    font-size: 1rem; /* Tamaño de texto reducido */
-    line-height: 1.5; /* Mejorar la legibilidad */
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Header */
 header {
-    display: flex;
-    margin: 0;
-    background-color: var(--Color-secundario);
     width: 100%;
-    height: 80px;
+    background-color: var(--Color-secundario);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
+    padding: 10px 0;
 }
 
-.izquierda {
+.left {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .izquierda img {
-    width: 7rem;
+    width: 60px;
     height: auto;
-    margin-top: 0px;
-    margin-left: -15px;
+}
+
+.titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 .derecha {
+    margin-top: 10px;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 header a {
     text-decoration: none;
-    color: #f4f4f4;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    transition: color 0.3s ease;
+    color: var(--Color-letras);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
 }
 
 header a:hover {
     color: var(--Color-secundario-flojo);
 }
 
-/* Estilo para el artículo */
+/* Artículo principal */
 article.all {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
 }
 
-/* Estilo de la imagen */
 section.img img {
-    background-color: crimson;
-    width: 30rem;
+    width: 100%;
     height: auto;
     object-fit: cover;
 }
 
+/* Información */
 section.more-info {
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 90%;
+    margin: 20px 0;
 }
 
-/* Estilo del contenedor de formularios */
+.more-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Formularios */
 .form-container {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-top: 40px;
-    gap: 20px; /* Espacio entre los formularios */
-}
-
-/* Estilos del formulario de selección de entradas */
-section.select-info {
-    width: 48%; /* Ajuste para tener espacio entre ambos formularios */
+    width: 90%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+section.select-info,
+section.info {
     background-color: #2f2f3f;
+    padding: 20px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .input-group {
@@ -123,52 +119,49 @@ section.select-info {
 
 .input-group label {
     display: block;
+    margin-bottom: 5px;
     font-weight: bold;
-    color: var(--Color-letras);
 }
 
 .input-group input,
 .input-group select {
-    width: 100%; /* 100% para que ocupe todo el ancho del contenedor sin desbordarse */
-    padding: 8px; /* Ajuste el espacio interno */
-    border: 1px solid #888; /* Bordes del input */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: #1e1e2f; /* Color de fondo */
-    color: var(--Color-letras); /* Color del texto */
-    font-size: 0.9rem; /* Tamaño de la fuente */
-    height: 40px; /* Controla la altura */
-    box-sizing: border-box; /* Asegura que el padding no haga que el input se desborde */
+    width: 100%;
+    padding: 10px;
+    background-color: #1e1e2f;
+    border: 1px solid #888;
+    border-radius: 5px;
+    color: var(--Color-letras);
+    font-size: 1rem;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 10px;
     margin-top: 20px;
 }
 
 .buttons button {
-    flex: 1;
-    padding: 10px 15px;
+    padding: 12px;
     background-color: #c084fc;
     color: #1e1e2f;
     border: none;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
 .buttons button:hover {
     background-color: var(--Color-secundario-flojo);
 }
 
-/* Estilos del formulario de información */
-section.info {
-    width: 48%; /* Ajuste para tener espacio entre ambos formularios */
-    display: flex;
-    flex-direction: column;
+/* Footer */
+footer {
+    width: 100%;
+    background-color: var(--Color-secundario);
+    color: var(--Color-letras);
+    text-align: center;
     padding: 20px;
-    background-color: #2f2f3f;
-    border-radius: 10px;
+    font-size: 0.9rem;
 }

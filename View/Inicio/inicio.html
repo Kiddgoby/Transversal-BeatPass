@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--link para usa funciones de bootsrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +14,15 @@
 </head>
 <body>
     <header>
-        <div class="izquierda">
-            <img src="../logoBilleteArnau.png" alt="">
+        <div class="left">
+            <div class="izquierda">
+                <a href="../Inicio/inicio.html">
+                    <img src="../logoBilleteArnau.png" alt="">
+                </a>    
+            </div>
+                <h1 class="titulo">Beat Pass</h1>
         </div>
-        <h1 class="titulo">Beat Pass</h1>
-        <div class="derecha">
+        <div class="rigth">
             <a href="">Eventos</a>
             <a href="">Lugares</a>
             <a href="cuenta.php">Cuenta</a>  
@@ -24,12 +31,12 @@
     </header>
 
     <article class="portada">
-        <h2>EL PRIMER CONCIERTO ES UNICO</h2>
+        <h2 class="titulo">EL PRIMER CONCIERTO ES UNICO</h2>
         <img src="https://estaticos-cdn.prensaiberica.es/clip/ad2b6489-5f23-4b08-a044-7c21ee5cda50_alta-libre-aspect-ratio_default_0.jpg" alt="">
     </article>
 
-    <div class="tituloYsubtitulo">
-        <h1 class="titulo">TOP VENTAS</h1>
+    <div class="top">
+        <h2 class="titulo">TOP VENTAS</h2>
     </div>
 
 <!-- Saga de 3 cartas con animaciones -5px con hober -->
@@ -56,30 +63,81 @@
         <img src="https://www.totalisimo.com/wp-content/uploads/2018/08/yandel-portada.jpg" alt="Yandel">
         <div class="card-body">
             <h5 class="card-title">Yandel</h5>
-            <p class="card-text">Leyenda del reggaetón en una noche explosiva de música y luces.</p>
+            <p class="card-text">Reggaetón puro en una noche explosiva de música y luces.</p>
             <a href="#" class="botonDefecto" >Saber más</a>
         </div>
     </div>
 </article>
+
 <!-- fin saga -->
-    <section class="generos">
-        <article class="musica-latina">
 
-        </article>
-<!------------------------------------------------------>
+    <section class="mas-buscado">
+        <h2 class="titulo">LO MÁS BUSCADO</h2>
+        <div class="grid-contenedor">
+            <a href="#">
+                <div class="grid-item">
+                    <div class="imagen-contenedor">
+                        <img src="../../Imagenes_A_Usar/badbunny.jpg" alt="BAD BUNNY">
+                    </div>
+                    <div class="boton">
+                        BAD BUNNY
+                    </div>
+                </div>
+            </a>
 
-        <article class="pop">
+            <a href="#">
+                <div class="grid-item">
+                    <div class="imagen-contenedor">
+                        <img src="../../Imagenes_A_Usar/drake.jpg" alt="Drake">
+                    </div>
+                    <div class="boton">
+                        DRAKE
+                    </div>
+                </div>
+            </a>
 
-        </article>
-<!------------------------------------------------------>
+            <a href="#">
+                <div class="grid-item">
+                    <div class="imagen-contenedor">
+                        <img src="../../Imagenes_A_Usar/kanyewes.jpg" alt="Kanye West">
+                    </div>
+                    <div class="boton">
+                        KANYE WEST
+                    </div>
+                </div>
+            </a>
 
-        <article class="reggeton">
+            <a href="#">
+                <div class="grid-item">
+                    <div class="imagen-contenedor">
+                        <img src="../../Imagenes_A_Usar/shakira.jpg" alt="OLIVIA RODRIGO">
+                    </div>
+                    <div class="boton">
+                        SHAKIRA
+                    </div>
+                </div>
+            </a>
 
-        </article>
-<!------------------------------------------------------>
-        <article class="rap">
-
-        </article>
+            <a href="">
+                <div class="grid-item">
+                    <div class="imagen-contenedor">
+                        <img src="../../Imagenes_A_Usar/delaossa.jpg" alt="DELAOSSA">
+                    </div>
+                    <div class="boton">
+                        DELAOSSA
+                    </div>
+                </div>
+            </a>
+        </div>
     </section>
+
+    <section class="container">
+        <h2>sisisisisisisisisisisisisisisisisi</h2>
+    </section>
+
+    <br>
+    <footer>
+        <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
+    </footer> 
 </body>
 </html>

@@ -1,13 +1,13 @@
-/* Variables personalizadas */
-:root{
-    --Color-principal: #1c1c1c;
-    --Color-secundario: #494979;
-    --Color-secundario-flojo: #6f6dbe;
-    --Color-letras: rgb(255, 255, 255);
-    --Color-bg-l: #1e1e2f;
+/* VARIABLES - Definimos colores globales */
+:root {
+    --Color-principal: #1c1c1c; /* Fondo general */
+    --Color-secundario: #494979; /* Header, botones principales */
+    --Color-secundario-flojo: #6f6dbe; /* Hover y fondos secundarios */
+    --Color-letras: #ffffff; /* Color de texto */
+    --Color-bg-l: #1e1e2f; /* Fondo de inputs */
 }
 
-/* Fuentes */
+/* TIPOGRAFÍAS - Definimos estilos de fuente */
 .titulo {
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -20,103 +20,141 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Estilos generales */
+/* ESTILOS GENERALES DEL BODY */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Color-principal);
-    height: 100vh;
-    display: flex;
+    background-color: var(--Color-principal); /* Fondo oscuro */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox para centrar contenido */
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    min-height: 100vh; /* Mínimo el alto completo de la pantalla */
 }
 
+/* HEADER - Parte fija superior */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: var(--Color-secundario);
-    height: 60px;
-    padding: 0 20px;
-    position: fixed;
+    position: fixed; /* Fijo en la parte superior */
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    background-color: var(--Color-secundario);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Siempre encima */
 }
 
 header h1 {
+    font-size: 2.5rem;
     color: var(--Color-principal);
     margin: 0;
-    font-size: 4rem;
-    width: 100%;
-    text-align: center;
 }
 
+/* ARTICLE - Contenedor del formulario */
 article {
-    background: var(--Color-secundario-flojo);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 400px;
-    margin-top: 80px; /* Espacio para evitar que el header lo cubra */
-}
-
-.buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.botonDefecto {
-    display: inline-block;
-    background-color: var(--Color-secundario);
-    color: white !important;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.botonDefecto:hover {
-    transform: translateY(-2px);
+    margin-top: 10rem; /* Espacio para no tapar el header */
+    padding: 30px 20px;
     background-color: var(--Color-secundario-flojo);
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave */
+    width: 90%;
+    max-width: 360px; /* Ancho máximo en pantallas grandes */
+    text-align: center;
 }
 
-h1 {
-    color: #0A0907;
+/* TÍTULOS DENTRO DEL ARTICLE */
+article h1 {
+    color: var(--Color-letras);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
+.subtitulo {
+    color: var(--Color-letras);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* GRUPO DE DATOS (Inputs) */
+.datos {
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* INPUT GROUP - Caja de cada input */
+.input-group {
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* INPUTS */
 .input-group input {
-    width: 100%;
-    max-width: 300px;
-    padding: 8px;
+    width: 90%;
+    padding: 12px;
+    font-size: 1rem;
     border: 1px solid #888;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: var(--Color-bg-l);
     color: var(--Color-letras);
+}
+
+/* BOTONES */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .buttons button {
     background-color: var(--Color-secundario);
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: #1e1e2f;
+    border-radius: 8px;
+    padding: 12px;
+    color: var(--Color-letras);
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    margin: 5px;
-    transition: 0.3s ease;
+    width: 100%;
+    transition: all 0.3s; /* Animación al pasar el mouse */
 }
 
+/* EFECTO HOVER EN BOTONES */
 .buttons button:hover {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.4rem 1rem #874ac0ad;
+    background-color: var(--Color-secundario-flojo);
+    transform: translateY(-2px); /* Sube ligeramente */
 }
 
+/* ESTILO DE LINKS (A) */
 a {
     text-decoration: none;
-    color: var(--Color-secundario-flojo);
+    width: 100%;
+}
+
+/* FOOTER */
+footer {
+    margin-top: auto; /* Empuja al fondo */
+    width: 100%;
+    background-color: var(--Color-secundario);
+    color: var(--Color-letras);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE - Estilos para pantallas anchas */
+@media (min-width: 768px) {
+    .buttons {
+        display: flex;
+        flex-direction: row; /* Pone los botones uno al lado del otro */
+        gap: 1rem; /* Espacio entre botones */
+        margin-top: 25px;
+        align-items: center;
+    }
 }
