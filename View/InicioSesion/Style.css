@@ -1,126 +1,211 @@
-/* Variables personalizadas USAR SIEMPRE EN CASO DE NECESITAR UNA SE CREA ( --nombre-vraiable ) */
-:root{
-    --Color-principal: #1c1c1c;
-    --Color-secundario: #38385f;
-    --Color-secundario-flojo: #6f6dbe;
-    --Color-letras:rgb(255, 255, 255);
-    --Color-bg-l:#1e1e2f;
+/* =======================================
+   VARIABLES DE COLORES
+   ======================================= */
+/* Definimos variables para usar colores en todo el proyecto de forma más fácil */
+:root {
+    --Color-principal: #1c1c1c; /* Fondo oscuro general */
+    --Color-secundario: #494979; /* Color secundario para header y footer */
+    --Color-secundario-flojo: #6f6dbe; /* Color suave para botones */
+    --Color-letras: rgb(255, 255, 255); /* Color blanco para el texto */
+    --Color-bg-l: #1e1e2f; /* Fondo de inputs */
 }
 
-/* Estilos generales */
+/* =======================================
+   FUENTES
+   ======================================= */
+.titulo {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.subtitulo {
+    font-family: 'Oswald', sans-serif;
+}
+
+.info {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =======================================
+   ESTILOS GENERALES DEL BODY
+   ======================================= */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Color-principal); 
-    color: var(--Color-letras);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: var(--Color-principal); /* Usamos variable */
+    color: var(--Color-letras); /* Color de letras blanco */
     margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Alto mínimo de la pantalla */
+    display: flex;
+    flex-direction: column; /* Para poner header arriba, main en medio y footer abajo */
 }
 
-/*  Estilos del encabezado */
+/* =======================================
+   HEADER (encabezado superior)
+   ======================================= */
 header {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     background-color: var(--Color-secundario);
-    height: 60px; 
-    padding: 0 20px;
-    position: fixed; 
-    top: 0; 
+    height: 60px;
+    position: fixed; /* Fijo arriba */
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; 
+    z-index: 1000; /* Para estar encima de todo */
 }
 
 header h1 {
-    color: var(--Color-principal);
+    color: var(--Color-letras);
     margin: 0;
-    font-size: 24px;
+    font-size: 2.5rem;
     text-align: center;
 }
 
-/*  Contenedor principal */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    max-width: 900px;
+/* =======================================
+   MAIN (contenido principal)
+   ======================================= */
+main {
+    flex: 1;
+    margin-top: 80px; /* Separación para no tapar el contenido con el header */
+    width: 100%;
     padding: 20px;
-    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/*  Sección izquierda (Título) */
+/* Contenedor de formulario y título */
+.container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre elementos */
+}
+
+/* =======================================
+   LEFT SECTION (sección de título)
+   ======================================= */
 .left-section {
-    flex: 1;
-    text-align: left;
+    text-align: center;
     font-size: 28px;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.822);
 }
 
-/*  Sección derecha (Formulario) */
-.right-section {
-    flex: 1;
-    text-align: center;
+/* =======================================
+   FORMULARIO
+   ======================================= */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/*  Estilos del formulario */
 .input-group {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 
 .input-group label {
-    display: block;
     font-weight: bold;
-    color: var(--Color-letras);
+    margin-bottom: 5px;
 }
 
 .input-group input {
-    width: 100%;
-    max-width: 300px;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #888;
     border-radius: 5px;
-    background-color: var(--Color-bg-l);
-    color: var(--Color-letras);
+    background-color: var(--Color-bg-l); /* Color de fondo definido */
+    color: var(--Color-letras); /* Texto blanco */
 }
 
-/*  Botones */
+/* =======================================
+   BOTONES
+   ======================================= */
 .buttons {
-    text-align: center;
-    margin-top: 20px;
-}
-button:hover{
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.4rem 1rem #874ac0ad;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .buttons button {
-    background-color: var(--Color-secundario-flojo); 
+    background-color: var(--Color-secundario-flojo); /* Color de botón */
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    color: #1e1e2f;
+    padding: 10px;
+    color: #1e1e2f; /* Color del texto del botón */
     font-weight: bold;
     cursor: pointer;
-    margin: 5px;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
+/* Efecto hover cuando pasamos el ratón */
 .buttons button:hover {
-    background-color: var(--Color-secundario-flojo);
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 1rem #874ac0ad;
 }
 
-main {
-    margin-top: 100px;
-}
-
+/* =======================================
+   LINKS
+   ======================================= */
 a {
-    text-decoration: none;
-    color: var(--Color-secundario-flojo);
+    text-decoration: none; /* Quitamos subrayado de los enlaces */
+}
+
+/* =======================================
+   FOOTER (pie de página)
+   ======================================= */
+footer {
+    width: 100%;
+    background-color: var(--Color-secundario);
+    color: var(--Color-letras);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* =======================================
+   RESPONSIVE DESIGN (pantallas grandes)
+   ======================================= */
+/*
+Explicación: primero adaptamos para pantallas pequeñas (por defecto)
+y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
+*/
+@media (min-width: 768px) {
+    /* Cambiamos el contenedor para que esté en fila */
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 60%;
+        margin-top: 5rem;
+    }
+
+    /* Alineamos el texto del título a la izquierda */
+    .left-section {
+        text-align: left;
+    }
+    
+    /* Aumentamos el tamaño del título */
+    .left-section h1 {
+        font-size: 6rem;
+        white-space: pre-line; /* Permitimos saltos de línea automáticos */
+    }
+
+    /* Ajustamos el formulario al nuevo ancho */
+    form {
+        display: flex;
+        max-width: 100%;
+    }    
+
+    /* Botones en fila */
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
