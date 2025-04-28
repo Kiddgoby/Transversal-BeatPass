@@ -6,10 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST["Login"])) {
         $UserController ->login();
+        echo __LINE__;
     }elseif (isset($_POST["Singup"])) {
         $UserController -> singup();
+        echo __LINE__;
     }elseif (isset($_POST["logout"])) {
         $UserController -> logout();
+        echo __LINE__;
     }
 
 
@@ -80,7 +83,7 @@ class UserController
 
             $this->conn->close();
             
-            header(header: "Location: ../view/Inicio/Inicio.html");
+            header(header: "Location: ../View/Inicio/inicio.html");
             
             return true;
 
@@ -88,7 +91,7 @@ class UserController
             $_SESSION ["logged"] = false;
             $_SESSION ["Login_Error"] = "Email or password are wrong";
             $this->conn->close();
-            header(header: "Location: ../view/InicioSesion/Index.html");
+            header(header: "Location: ../view/InicioSesion/index1.html");
             return false;
         }
 
@@ -124,28 +127,35 @@ class UserController
         $cpassword =trim($_POST["cpassword"]);
 
 
+        echo __LINE__;
         if ($password !== $cpassword){
-        
+            
             echo "Las contraseñas no coinciden";
             return false;
         };
-
+        
+        echo __LINE__;
         $query = " INSERT INTO usuarios (nameN, email, contrasena) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-
+        echo __LINE__;
+        
         if (!$stmt) {
             echo "Error al preparar la consulta: " . $this->conn->error;
             return false;
         }
-    
-        $stmt->bind_param("sss", $nameN, $email, $password);
-    
-        if ($stmt->execute()) {
-            $_SESSION ["Singed"] = true;
-            header("Location: ../view/InicioSesion/index.html");
-            return true;
         
+        echo __LINE__;
+        $stmt->bind_param("sss", $nameN, $email, $password);
+        echo __LINE__;
+        
+        if ($stmt->execute()) {
+            echo __LINE__;
+            $_SESSION ["Singed"] = true;
+            header("Location: ../View/InicioSesion/index1.html");
+            return true;
+            
         } else {
+            echo __LINE__;
             $_SESSION ["Singed"] = false;
             echo "Error al registrar: " . $stmt->error;
             return false;
