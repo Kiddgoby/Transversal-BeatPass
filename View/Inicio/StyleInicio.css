@@ -84,9 +84,11 @@ header h1 {
 header .rigth {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 1rem;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 0.1rem;
+    flex-direction: row;
+    align-items: center;
 }
 
 header a {
@@ -99,6 +101,20 @@ header a {
 header a:hover {
     color: #c084fc;
 }
+
+.idioma-selector select {
+    background-color: var(--Color-principal);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-family: var(--fuente-subtitulo);
+    cursor: pointer;
+  }
+  
+  .idioma-selector select:hover {
+    background-color: var(--Color-principal);
+  }  
 
 /* PORTADA */
 .portada {
