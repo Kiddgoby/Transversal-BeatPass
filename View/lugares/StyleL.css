@@ -1,0 +1,141 @@
+:root {
+    --Color-principal: #1c1c1c;
+    --Color-secundario: #494979;
+    --Color-secundario-flojo: #6f6dbe;
+    --Color-letras: #ffffff;
+
+    --fuente-titulo: 'Bebas Neue', sans-serif;
+    --fuente-subtitulo: 'Oswald', sans-serif;
+    --fuente-info: 'Montserrat', sans-serif;
+
+    --font-titulo: 2rem;
+    --font-subtitulo: 1.3rem;
+    --font-normal: 0.95rem;
+}
+
+body {
+    background-color: var(--Color-principal);
+    color: var(--Color-letras);
+    font-family: var(--fuente-info);
+    margin: 0;
+    padding: 0; 
+}
+
+a {
+    color: #d1c4e9;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c084fc;
+    text-decoration: underline;
+}
+
+header {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100vw; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Color-secundario);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.izquierda img {
+    width: 4rem;
+    height: auto;
+}
+
+.titulo {
+    font-family: var(--fuente-titulo);
+    font-size: var(--font-titulo);
+    margin: 0;
+}
+
+.rigth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 10px;
+}
+
+.idioma-selector select {
+    background-color: var(--Color-principal);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: var(--fuente-subtitulo);
+}
+
+.lugar-section {
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: var(--Color-secundario);
+    color: white;
+    height: 100%;
+    margin-bottom: 1rem;
+}
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    font-size: var(--font-normal);
+    padding: 0.5rem;
+}
+
+footer {
+    background-color: var(--Color-secundario);
+    color: var(--Color-letras);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    margin-top: 40px;
+}
+
+/* Estilos para tablets y escritorios */
+@media (min-width: 768px) {
+    :root {
+        --font-titulo: 3.5rem;
+        --font-subtitulo: 2.5rem;
+        --font-normal: 1.2rem;
+    }
+
+    .left {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .rigth {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .izquierda img {
+        width: 5rem;
+    }
+
+    .card img {
+        height: 200px;
+    }
+}
