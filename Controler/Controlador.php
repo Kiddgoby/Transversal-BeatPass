@@ -13,6 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }elseif (isset($_POST["logout"])) {
         $UserController -> logout();
         echo __LINE__;
+    }elseif (isset($_POST["cuenta"])) {
+        $UserController -> cuenta();
+        echo __LINE__;
     }
 
 
@@ -91,7 +94,7 @@ class UserController
             $_SESSION ["logged"] = false;
             $_SESSION ["Login_Error"] = "Email or password are wrong";
             $this->conn->close();
-            header(header: "Location: ../view/InicioSesion/index1.html");
+            header(header: "Location: ../View/InicioSesion/index1.html");
             return false;
         }
 
@@ -103,21 +106,13 @@ class UserController
     {
     session_unset(); // Borra todas las variables de sesión
     session_destroy(); // Destruye la sesión
-    echo "Sesión cerrada.";
-    header("Location: inicio.html"); 
+    header( "Location: ../View/InicioSesion/index1.html"); 
     exit();
     }
 
         
 
-    //falta acabar
-    //falta acabar
-    //falta acabar
-    //falta acabar
-    //falta acabar
-    //falta acabar
-    //falta acabar
-    //falta acabar
+  
     public function singup(): bool
     {
         //nombre de campo form
@@ -163,6 +158,17 @@ class UserController
     }
 
 
-}
 
+public function cuenta(): void
+{
+    // Verifica si el correo es del admin
+    if ($_SESSION["email"] == "administrador1234@gmail.com") {
+        header("Location: ../Cuenta/cuentaAdmin.html");
+    } else {
+        header("Location: ../Cuenta/cuenta.html");
+    }
+
+    exit();
+}
+}
 ?>
