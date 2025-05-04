@@ -27,16 +27,36 @@
 <body>
     <!-- CABECERA de la página -->
     <header>
-        <h1 class="titulo">Beat Pass</h1>
+        <div class="left">
+            <div class="izquierda">
+                <a href="../Inicio/inicio.html">
+                    <img src="../logoBilleteArnau.png" alt="">
+                </a>    
+            </div>
+                <h1 class="titulo">Beat Pass</h1>
+        </div>
+        <div class="rigth">
+            <div class="idioma-selector">
+                <select onchange="window.location.href=this.value">
+                  <option value="../Inicio/inicio.html" selected>Español</option>
+                  <option value="../Inicio/inicio_cat.html">Català</option>
+                  <option value="../Inicio/inicio_en.html">English</option>
+                </select>
+              </div>
+            <!-- Posivilidades dentro de la web -->
+            <a href="../eventos/eventos.html">Eventos</a>
+            <a href="../lugares/Lugares.html">Lugares</a>
+            <a href="../Cuenta/cuanta.html">Cuenta</a>  
+            <a href="../InicioSesion/index1.html">Cerrar sesión</a>     
+        </div>
     </header>
-
     <!-- CONTENIDO PRINCIPAL -->
     <main class="pagina">
         <article class="perfil">
             <div class="principio">
                 <h2 class="titulo">Arnau Gausachs</h2>
                 <!-- Imagen actual del usuario -->
-                <img src="../artistas/d5412176-3e40-47a7-886a-c3c7e59f681a.jfif" alt="Imagen de perfil" id="imagenPerfil">
+                <img src="../../Imagenes_A_Usar/españa.png" alt="Imagen de perfil" id="imagenPerfil">
         
                 <!-- Formulario para subir nueva imagen -->
                 <form action="cambiar_imagen.php" method="POST" enctype="multipart/form-data">
@@ -59,9 +79,6 @@
                 <p class="titulo">Proximos conciertos:</p>
                 <p class="info">Aun no hay conciertos a los que puedas acudiar explora nuestra web i encuentra las mejores ofertas</p>
             </div>
-        </article>
-        <article class="derecha">
-            <img src="../../Imagenes_A_Usar/pexels-photo-976866..png" alt="Decoración Beat Pass" class="decorativa">
         </article>
     </main>
 
