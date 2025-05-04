@@ -1,8 +1,40 @@
+/* VARIABLES */
 :root {
     --Color-principal: #1c1c1c;
     --Color-secundario: #494979;
     --Color-secundario-flojo: #6f6dbe;
     --Color-letras: rgb(255, 255, 255);
+    --fuente-titulo: 'Bebas Neue', sans-serif;
+    --fuente-subtitulo: 'Oswald', sans-serif;
+    --fuente-info: 'Montserrat', sans-serif;
+
+    /* Tamaños base (por defecto móvil) */
+    --font-titulo: 2rem;
+    --font-subtitulo: 1.5rem;
+    --font-normal: 1rem;
+}
+
+/* TITULOS */
+.titulo {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subtitulo {
+    font-family: var(--fuente-subtitulo);
+    font-size: 1.5rem;
+}
+
+.info {
+    font-family: var(--fuente-info);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
 }
 
 /* Estilos globales */
@@ -164,4 +196,84 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
+}
+
+@media (min-width: 769px) {
+    :root {
+        --font-titulo: 4rem;
+        --font-subtitulo: 3.5rem;
+        --font-normal: 1.8rem;
+    }
+
+    /* TITULOS */
+    .titulo{
+        font-size: var(--font-titulo);
+    }
+ 
+    .subtitulo {
+        font-size: var(--font-subtitulo);
+    }
+   
+    .info {
+        font-size: var(--font-normal);
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+    }
+    header .left {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .izquierda img{
+        height: 4.2rem;
+        width: 6rem;
+    }
+
+    article.all {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    section.img {
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    section.img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    section.more-info {
+        font-size: var(--font-normal);
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-container{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+    .input-group{
+        font-size: var(--font-normal);
+    }
+
+    
 }
