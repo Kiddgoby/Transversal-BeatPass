@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- METADATOS Y ENLACES IMPORTANTES -->
+    
+    <!-- Enlace a Bootstrap para usar su sistema de estilos rápidos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Configuración de caracteres y vista para móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título que se muestra en la pestaña del navegador -->
+    <title>Beat Pass - Inicio de Sesión</title>
+
+    <!-- Ícono pequeño que aparece en la pestaña del navegador -->
+    <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
+
+    <!-- Enlace a nuestro archivo de estilos personalizados -->
+    <link rel="stylesheet" href="StyleC.css">
+
+    <!-- Enlace a las fuentes externas de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- CABECERA de la página -->
+    <header>
+        <h1 class="titulo">Beat Pass</h1>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="pagina">
+        <article class="perfil">
+            <div class="principio">
+                <h2 class="titulo">Arnau Gausachs</h2>
+                <!-- Imagen actual del usuario -->
+                <img src="../artistas/d5412176-3e40-47a7-886a-c3c7e59f681a.jfif" alt="Imagen de perfil" id="imagenPerfil">
+        
+                <!-- Formulario para subir nueva imagen -->
+                <form action="cambiar_imagen.php" method="POST" enctype="multipart/form-data" style="text-align: center;">
+                    <!-- Input oculto -->
+                    <input type="file" name="nueva_imagen" id="nuevaImagen" accept="image/*" style="display: none;" required>
+                    
+                    <!-- Etiqueta que actúa como botón -->
+                    <label for="nuevaImagen" class="button">
+                        <h3>Seleccionar imagen</h3>
+                    </label>
+                
+                    <!-- Botón de subir
+                    <button type="submit" class="button" style="margin-top: 10px;">
+                        <h3>Subir imagen</h3>
+                    </button> -->
+                </form>
+            </div>
+        
+            <div class="datos">
+                <p class="titulo">Proximos conciertos:</p>
+                <p class="info">Aun no hay conciertos a los que puedas acudiar explora nuestra web i encuentra las mejores ofertas</p>
+            </div>
+        </article>
+        <article class="derecha">
+            <img src="../../Imagenes_A_Usar/pexels-photo-976866..png" alt="Decoración Beat Pass" class="decorativa">
+        </article>
+    </main>
+    
+    <!-- PIE DE PÁGINA -->
+    <br>
+    <footer>
+        <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
+    </footer> 
+</body>
+
+</html>
