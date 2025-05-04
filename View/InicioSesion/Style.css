@@ -1,28 +1,36 @@
-/* =======================================
-   VARIABLES DE COLORES
-   ======================================= */
-/* Definimos variables para usar colores en todo el proyecto de forma más fácil */
+/* VARIABLES */
 :root {
-    --Color-principal: #1c1c1c; /* Fondo oscuro general */
-    --Color-secundario: #494979; /* Color secundario para header y footer */
-    --Color-secundario-flojo: #6f6dbe; /* Color suave para botones */
-    --Color-letras: rgb(255, 255, 255); /* Color blanco para el texto */
-    --Color-bg-l: #1e1e2f; /* Fondo de inputs */
+    --Color-principal: #1c1c1c;
+    --Color-secundario: #494979;
+    --Color-secundario-flojo: #6f6dbe;
+    --Color-letras: rgb(255, 255, 255);
+    --fuente-titulo: 'Bebas Neue', sans-serif;
+    --fuente-subtitulo: 'Oswald', sans-serif;
+    --fuente-info: 'Montserrat', sans-serif;
+
+    /* Tamaños base (por defecto móvil) */
+    --font-titulo: 2rem;
+    --font-subtitulo: 1.5rem;
+    --font-normal: 1rem;
 }
 
-/* =======================================
-   FUENTES
-   ======================================= */
+/* TITULOS */
 .titulo {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .subtitulo {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--fuente-subtitulo);
+    font-size: 1.5rem;
 }
 
 .info {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--fuente-info);
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* =======================================
@@ -138,7 +146,7 @@ form {
     border: none;
     border-radius: 5px;
     padding: 10px;
-    color: #1e1e2f; /* Color del texto del botón */
+    color: var(--Color-letras); /* Color del texto del botón */
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
@@ -176,13 +184,84 @@ footer {
 Explicación: primero adaptamos para pantallas pequeñas (por defecto)
 y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
 */
-@media (min-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
+    :root {
+        --font-titulo: 3rem;
+        --font-subtitulo: 2rem;
+        --font-normal: 1.2rem;
+    }
+
+    /* TITULOS */
+    .titulo{
+        font-size: var(--font-titulo);
+    }
+ 
+    .subtitulo {
+        font-size: var(--font-subtitulo);
+    }
+   
+    .info {
+        font-size: var(--font-normal);
+    }
+    
     /* Cambiamos el contenedor para que esté en fila */
     .container {
         display: flex;
         flex-direction: row;
         align-items: center;
-        max-width: 60%;
+        max-width: 80%;
+        margin-top: 5rem;
+    }
+
+    /* Alineamos el texto del título a la izquierda */
+    .left-section {
+        text-align: left;
+    }
+    
+    /* Aumentamos el tamaño del título */
+    .left-section h1 {
+        font-size: 6rem;
+        white-space: pre-line; /* Permitimos saltos de línea automáticos */
+    }
+
+    /* Ajustamos el formulario al nuevo ancho */
+    form {
+        display: flex;
+        max-width: 100%;
+    }    
+
+    /* Botones en fila */
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media (min-width: 769px) {
+    :root {
+        --font-titulo: 4rem;
+        --font-subtitulo: 3.5rem;
+        --font-normal: 1.8rem;
+    }
+
+    /* TITULOS */
+    .titulo{
+        font-size: var(--font-titulo);
+    }
+ 
+    .subtitulo {
+        font-size: var(--font-subtitulo);
+    }
+   
+    .info {
+        font-size: var(--font-normal);
+    }
+    
+    /* Cambiamos el contenedor para que esté en fila */
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 40%;
         margin-top: 5rem;
     }
 

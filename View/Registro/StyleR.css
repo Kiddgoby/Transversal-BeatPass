@@ -1,25 +1,36 @@
-/* VARIABLES - Definimos colores globales */
 :root {
-    --Color-principal: #1c1c1c; /* Fondo general */
-    --Color-secundario: #494979; /* Header, botones principales */
-    --Color-secundario-flojo: #6f6dbe; /* Hover y fondos secundarios */
-    --Color-letras: #ffffff; /* Color de texto */
-    --Color-bg-l: #1e1e2f; /* Fondo de inputs */
+    --Color-principal: #1c1c1c;
+    --Color-secundario: #494979;
+    --Color-secundario-flojo: #6f6dbe;
+    --Color-letras: rgb(255, 255, 255);
+    --fuente-titulo: 'Bebas Neue', sans-serif;
+    --fuente-subtitulo: 'Oswald', sans-serif;
+    --fuente-info: 'Montserrat', sans-serif;
+
+    /* Tamaños base (por defecto móvil) */
+    --font-titulo: 2rem;
+    --font-subtitulo: 1.5rem;
+    --font-normal: 1rem;
 }
 
-/* TIPOGRAFÍAS - Definimos estilos de fuente */
+/* TITULOS */
 .titulo {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .subtitulo {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--fuente-subtitulo);
+    font-size: 1.5rem;
 }
 
 .info {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--fuente-info);
+    font-size: 1rem;
+    line-height: 1.5;
 }
-
 /* ESTILOS GENERALES DEL BODY */
 body {
     font-family: Arial, sans-serif;
@@ -101,7 +112,7 @@ article h1 {
     font-size: 1rem;
     border: 1px solid #888;
     border-radius: 8px;
-    background-color: var(--Color-bg-l);
+    background-color: var(--Color-secundario);
     color: var(--Color-letras);
 }
 
