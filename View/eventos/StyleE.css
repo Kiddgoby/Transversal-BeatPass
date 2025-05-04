@@ -96,10 +96,12 @@ header a {
     color: var(--Color-principal);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: color 0.3s ease;
+    color: var(--Color-letras);
+
 }
 
 header a:hover {
-    color: #c084fc;
+    color: var(--Color-principal);
 }
 
 .idioma-selector select {
@@ -143,7 +145,12 @@ header a:hover {
     font-size: 1rem;
 }
 
-
+.card-evento {
+    background-color: #212529; /* equivalente a bg-dark */
+    color: white;
+    height: 100%;
+    border: none;
+}
 
 /* FOOTER */
 footer {
