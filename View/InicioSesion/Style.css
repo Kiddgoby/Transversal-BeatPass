@@ -158,6 +158,9 @@ form {
     box-shadow: 0 0.4rem 1rem #874ac0ad;
 }
 
+.buttons button {
+    width: 100%;
+}
 /* =======================================
    LINKS
    ======================================= */
@@ -235,6 +238,7 @@ y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
         flex-direction: row;
         justify-content: center;
     }
+
 }
 @media (min-width: 769px) {
     :root {
@@ -283,8 +287,12 @@ y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
     }    
 
     /* Botones en fila */
-    .buttons {
+    .buttons button, a{
+        display: flex;
         flex-direction: row;
-        justify-content: center;
+        gap: 10px;
+        margin-top: 0.2rem;
+        align-items: center;
+        justify-content: space-around;
     }
 }

@@ -1,4 +1,6 @@
-/* VARIABLES */
+/* ============================= */
+/* VARIABLES Y TIPOGRAFÍA       */
+/* ============================= */
 :root {
     --Color-principal: #1c1c1c;
     --Color-secundario: #494979;
@@ -8,7 +10,7 @@
     --fuente-subtitulo: 'Oswald', sans-serif;
     --fuente-info: 'Montserrat', sans-serif;
 
-    /* Tamaños base (por defecto móvil) */
+    /* Tamaños base móviles */
     --font-titulo: 2rem;
     --font-subtitulo: 1.5rem;
     --font-normal: 1rem;
@@ -17,27 +19,25 @@
 /* TITULOS */
 .titulo {
     font-family: var(--fuente-titulo);
-    font-size: 2rem;
+    font-size: var(--font-titulo);
     text-align: center;
     margin: 20px 0;
 }
 
 .subtitulo {
     font-family: var(--fuente-subtitulo);
-    font-size: 1.5rem;
+    font-size: var(--font-subtitulo);
 }
 
 .info {
     font-family: var(--fuente-info);
-    font-size: 1rem;
+    font-size: var(--font-normal);
     line-height: 1.5;
 }
 
-a{
-    text-decoration: none;
-}
-
-/* BASE */
+/* ============================= */
+/* ESTILOS GENERALES            */
+/* ============================= */
 body {
     background-color: var(--Color-principal);
     margin: 0;
@@ -46,8 +46,13 @@ body {
     align-items: center;
     color: var(--Color-letras);
     font-family: var(--fuente-info);
+    min-height: 100vh;
+    padding: 0;
 }
 
+/* ============================= */
+/* HEADER                       */
+/* ============================= */
 /* HEADER */
 header {
     display: flex;
@@ -96,10 +101,11 @@ header a {
     color: var(--Color-principal);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: color 0.3s ease;
+    color: var(--Color-letras);
 }
 
 header a:hover {
-    color: #c084fc;
+    color: var(--Color-principal);
 }
 
 .idioma-selector select {
@@ -116,36 +122,70 @@ header a:hover {
     background-color: var(--Color-principal);
   }  
 
-
-
-/* BOTÓN DEFECTO */
-.botonDefecto {
-    display: inline-block;
-    background-color: var(--Color-secundario-flojo);
-    color: white !important;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+/* ============================= */
+/* MAIN - ESTRUCTURA PRINCIPAL  */
+/* ============================= */
+main.pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.botonDefecto:hover {
+/* PERFIL */
+.perfil {
+    background-color: var(--Color-secundario);
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 8px var(--Color-secundario);
+}
+
+.perfil .principio img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 0.180rem solid var(--Color-secundario-flojo);
+    margin: 1rem 0;
+}
+
+/* Botones y etiquetas estilo botón */
+.perfil .button,
+#logout,
+button {
+    background-color: var(--Color-secundario-flojo);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: var(--fuente-subtitulo);
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.perfil .button:hover,
+#logout:hover,
+button:hover {
     background-color: var(--Color-secundario);
 }
 
-.card-title {
-    font-family: var(--fuente-subtitulo);
-    font-size: 1.5rem;
+#nuevaImagen {
+    display: none;
 }
 
-.card-text {
-    font-family: var(--fuente-info);
-    font-size: 1rem;
-}
-
-
-
-/* FOOTER */
+/* ============================= */
+/* FOOTER                       */
+/* ============================= */
 footer {
     width: 100%;
     background-color: var(--Color-secundario);
@@ -153,11 +193,12 @@ footer {
     text-align: center;
     padding: 20px 0;
     font-size: 0.8rem;
-    margin-top: 20px;
+    margin-top: auto;
 }
 
-/* pantallas tablet */
-/* Tablet */
+/* ============================= */
+/* MEDIA QUERIES: TABLET        */
+/* ============================= */
 @media (min-width: 426px) and (max-width: 768px) {
     :root {
         --font-titulo: 3rem;
@@ -165,45 +206,41 @@ footer {
         --font-normal: 1.2rem;
     }
 
-/* TITULOS */
-    .titulo{
+    .titulo {
         font-size: var(--font-titulo);
     }
- 
+
     .subtitulo {
         font-size: var(--font-subtitulo);
     }
-   
+
     .info {
         font-size: var(--font-normal);
-    }
-    
-    .left{
-        display: flex;
     }
 }
 
-/* Escritorio */
+/* ============================= */
+/* MEDIA QUERIES: ESCRITORIO    */
+/* ============================= */
 @media (min-width: 769px) {
     :root {
         --font-titulo: 4rem;
-        --font-subtitulo: 3.5rem;
-        --font-normal: 1.8rem;
+        --font-subtitulo: 3rem;
+        --font-normal: 1.5rem;
     }
 
-    /* TITULOS */
-    .titulo{
+    .titulo {
         font-size: var(--font-titulo);
     }
- 
+
     .subtitulo {
         font-size: var(--font-subtitulo);
     }
-   
+
     .info {
         font-size: var(--font-normal);
     }
-    
+
     header{
         display: flex;
         flex-direction: row;
@@ -218,12 +255,40 @@ footer {
         justify-content: space-between;
     }
 
-    .boton {
-        height: 100px; /* Ajusta para que siempre se vea bien el nombre */
-        display: flex;
-        align-items: center;
+    main.pagina {
+        flex-direction: row;
+        align-items: flex-start;
         justify-content: center;
-        padding: 10px;
-        font-size: 1.2rem;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .perfil {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1000px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .perfil .principio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .perfil .principio img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+    }
+
+    .perfil .datos {
+        flex: 1 1 auto;
     }
 }
