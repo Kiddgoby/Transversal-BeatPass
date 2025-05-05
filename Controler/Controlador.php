@@ -44,14 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 class UserController {
-    private $conn;  // Propiedad privada para la conexión
+    private $conn;  
 
     // Constructor para inicializar la conexión a la base de datos
     public function __construct() {
         // Establecer conexión a la base de datos (ajusta los parámetros según tu configuración)
         $this->conn = new mysqli("localhost", "root", "", "beatpass");
         
-        // Verificar si la conexión fue exitosa
+
         if ($this->conn->connect_error) {
             die("Conexión fallida: " . $this->conn->connect_error);
         }
