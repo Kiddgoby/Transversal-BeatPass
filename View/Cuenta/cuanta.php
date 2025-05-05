@@ -8,21 +8,21 @@ $imagen = null;
 
 if ($email) {
     // Instanciar el controlador de usuario
-    $userController = new UserController();  // Asegúrate de que la clase se instancia correctamente
+    $userController = new UserController();
 
-    // Consultar la imagen del usuario
-    $query = "SELECT imagen FROM usuarios WHERE email = ?";
-    $stmt = $userController->getConnection()->prepare($query); // Accedes a la conexión usando el método getConnection
+    // Consultar la imagen y el nombre del usuario
+    $query = "SELECT nameN, imagen FROM usuarios WHERE email = ?";
+    $stmt = $userController->getConnection()->prepare($query);
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
     
-    // Obtener la imagen si existe
     if ($row = $result->fetch_assoc()) {
         $imagen = $row["imagen"];
+        $nameN = $row["nameN"];
     }
 }
-?>
+?>      
 
 <!DOCTYPE html>
 <html lang="es">
@@ -44,15 +44,14 @@ if ($email) {
     <main class="pagina">
         <article class="perfil">
             <div class="principio">
-                <h2 class="titulo"><?= htmlspecialchars($nombre) ?></h2>
-                <img src="../uploads/<?= htmlspecialchars($imagen) ?>" alt="Imagen de perfil" id="imagenPerfil">
+                <h2 class="titulo"><?= htmlspecialchars($nameN) ?></h2>
 
-                <!-- Formulario para subir nueva imagen -->
-                <form action="cambiar_imagen.php" method="POST" enctype="multipart/form-data" style="text-align: center;">
-                    <input type="file" name="nueva_imagen" id="nuevaImagen" accept="image/*" style="display: none;" required>
-                    <label for="nuevaImagen" class="button"><h3>Seleccionar imagen</h3></label>
-                    <button type="submit" class="button" style="margin-top: 10px;"><h3>Subir imagen</h3></button>
-                </form>
+                <?php if (!empty($imagen)): ?>
+                    <img src="../../uploads/<?= htmlspecialchars($imagen) ?>" alt="Imagen de perfil" id="imagenPerfil" style="width: 150px; height: 150px; border-radius: 50%;">
+
+                <?php else: ?>
+                    <p>No hay imagen de perfil</p>
+                <?php endif; ?>
             </div>
 
             <div class="datos">
