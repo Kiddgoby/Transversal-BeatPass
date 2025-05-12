@@ -32,21 +32,22 @@
 }
 
 body {
-    background-color: var(--Color-principal);
-    color: var(--Color-letras);
-    font-family: var(--fuente-info);
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-display);
     margin: 0;
     padding: 0; 
 }
 
 a {
-    color: #d1c4e9;
+   
     text-decoration: none;
 }
 
+
 a:hover {
     color: #c084fc;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .izquierda img {
@@ -55,9 +56,10 @@ a:hover {
 }
 
 .titulo {
-    font-family: var(--fuente-titulo);
-    font-size: var(--font-titulo);
-    margin: 0;
+    font-family: var(--font-size-xlarge);
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .rigth {
@@ -80,45 +82,66 @@ a:hover {
 .lugar-section {
     margin-bottom: 2rem;
 }
-
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
 .card {
-    background-color: var(--Color-secundario);
-    color: white;
-    height: 100%;
-    margin-bottom: 1rem;
+    width: 90%;
+    max-width: 300px;
+    background-color: var(--color-surface);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--color-background);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--color-on-surface);
 }
 
 .card img {
-    height: 180px;
-    object-fit: cover;
     width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-body {
-    font-size: var(--font-normal);
-    padding: 0.5rem;
+    padding: 20px;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var();
 }
 
 footer {
-    background-color: var(--Color-secundario);
-    color: var(--Color-letras);
+    width: 100%;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
     text-align: center;
-    padding: 20px;
-    font-size: 0.75rem;
-    margin-top: 40px;
+    padding: 20px 0;
+    font-size: 0.8rem;
+    margin-top: 20px;
 }
 
 /* Estilos para tablets y escritorios */
 @media (min-width: 768px) {
     :root {
-        --font-titulo: 3.5rem;
-        --font-subtitulo: 2.5rem;
-        --font-normal: 1.2rem;
+        --font-titulo: 4rem;
+        --font-subtitulo: 3.5rem;
+        --font-normal: 1.8rem;
     }
 
-    .left {
-        flex-direction: row;
-        justify-content: flex-start;
+    .left{
+        display: flex;
     }
 
     .rigth {
@@ -132,6 +155,9 @@ footer {
     }
 
     .card img {
+        width: 100%;
         height: 200px;
+        object-fit: cover;
     }
 }
+

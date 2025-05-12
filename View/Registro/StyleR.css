@@ -1,40 +1,51 @@
 :root {
-    --Color-principal: #1c1c1c;
-    --Color-secundario: #494979;
-    --Color-secundario-flojo: #6f6dbe;
-    --Color-letras: rgb(255, 255, 255);
-    --fuente-titulo: 'Bebas Neue', sans-serif;
-    --fuente-subtitulo: 'Oswald', sans-serif;
-    --fuente-info: 'Montserrat', sans-serif;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-links: 'Oswald', sans-serif;
 
-    /* Tamaños base (por defecto móvil) */
-    --font-titulo: 2rem;
-    --font-subtitulo: 1.5rem;
-    --font-normal: 1rem;
+    --color-background: #121212; /* Very dark grey, almost black */
+    --color-surface: #1E1E1E;    /* Dark grey for cards, sections */
+    --color-primary: #7E57C2;   /* Deep purple - accent */
+    --color-primary-variant: #5E35B1; /* Darker purple */
+    --color-secondary: #03DAC6;  /* Teal - secondary accent */
+    --color-on-background: #E0E0E0; /* Light grey for text on dark background */
+    --color-on-surface: #FFFFFF;   /* White for text on surface elements */
+    --color-on-primary: #FFFFFF;   /* White for text on primary color */
+    --color-border: #333333;     /* Subtle borders */
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-shadow-hover: rgba(126, 87, 194, 0.4); /* Purple shadow on hover */
+
+    --header-height-mobile: auto;
+    --header-height-desktop: 5.5rem; /* Increased slightly */
+    --padding-standard: 1rem;
+    --padding-large: 1.5rem;
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --transition-speed: 0.3s;
 }
 
 /* TITULOS */
 .titulo {
-    font-family: var(--fuente-titulo);
+    font-family: var(--font-display);
     font-size: 2rem;
     text-align: center;
     margin: 20px 0;
 }
 
 .subtitulo {
-    font-family: var(--fuente-subtitulo);
+    font-family: var(--font-primary);
     font-size: 1.5rem;
 }
 
 .info {
-    font-family: var(--fuente-info);
+    font-family: var(--font-links);
     font-size: 1rem;
     line-height: 1.5;
 }
 /* ESTILOS GENERALES DEL BODY */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Color-principal); /* Fondo oscuro */
+    background-color: var(--color-background); /* Fondo oscuro */
     margin: 0;
     padding: 0;
     display: flex; /* Flexbox para centrar contenido */
@@ -43,34 +54,13 @@ body {
     min-height: 100vh; /* Mínimo el alto completo de la pantalla */
 }
 
-/* HEADER - Parte fija superior */
-header {
-    position: fixed; /* Fijo en la parte superior */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--Color-secundario);
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Siempre encima */
-}
-
-header h1 {
-    color: var(--Color-letras);
-    margin: 0;
-    font-size: 2.5rem;
-    text-align: center;
-}
-
 /* ARTICLE - Contenedor del formulario */
 article {
     margin-top: 7rem; /* Espacio para no tapar el header */
     padding: 30px 20px;
-    background-color: var(--Color-secundario-flojo);
+    background-color: var(--color-primary-variant);
     border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave */
+    box-shadow: var(--color-secondary); /* Sombra suave */
     width: 90%;
     max-width: 360px; /* Ancho máximo en pantallas grandes */
     text-align: center;
@@ -78,15 +68,9 @@ article {
 
 /* TÍTULOS DENTRO DEL ARTICLE */
 article h1 {
-    color: var(--Color-letras);
+    color: var(--color-background);
     font-size: 1.8rem;
     margin-bottom: 15px;
-}
-
-.subtitulo {
-    color: var(--Color-letras);
-    font-size: 1.2rem;
-    margin-bottom: 20px;
 }
 
 /* GRUPO DE DATOS (Inputs) */
@@ -110,10 +94,10 @@ article h1 {
     width: 90%;
     padding: 12px;
     font-size: 1rem;
-    border: 1px solid #888;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
-    background-color: var(--Color-secundario);
-    color: var(--Color-letras);
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
 }
 
 /* BOTONES */
@@ -125,11 +109,11 @@ article h1 {
 }
 
 .buttons button {
-    background-color: var(--Color-secundario);
+    background-color: var(--color-background);
     border: none;
     border-radius: 8px;
     padding: 12px;
-    color: var(--Color-letras);
+    color: var(--color-on-surface);
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -139,12 +123,13 @@ article h1 {
 
 /* EFECTO HOVER EN BOTONES */
 .buttons button:hover {
-    background-color: var(--Color-secundario-flojo);
+    background-color: var(--color-border);
     transform: translateY(-2px); /* Sube ligeramente */
 }
 
 /* ESTILO DE LINKS (A) */
 a {
+    color: var(--color-background);
     text-decoration: none;
     width: 100%;
 }
@@ -153,8 +138,8 @@ a {
 footer {
     margin-top: auto; /* Empuja al fondo */
     width: 100%;
-    background-color: var(--Color-secundario);
-    color: var(--Color-letras);
+    background-color: var(--color-background);
+    color: var(--color-background);
     text-align: center;
     padding: 15px 0;
     font-size: 0.9rem;
