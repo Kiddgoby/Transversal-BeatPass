@@ -1,28 +1,28 @@
 <?php
 
-require_once "../../Controler/Controlador.php";  // Asegúrate de que la ruta sea correcta
+require_once "../../Controler/Controlador.php";  
 
-// Iniciar sesión y obtener el email del usuario
 $email = $_SESSION["email"] ?? null;
 $imagen = null;
+$nameN = null;
 
 if ($email) {
-    // Instanciar el controlador de usuario
+
     $userController = new UserController();
 
-    // Consultar la imagen y el nombre del usuario
+
     $query = "SELECT nameN, imagen FROM usuarios WHERE email = ?";
     $stmt = $userController->getConnection()->prepare($query);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($row = $result->fetch_assoc()) {
+    $stmt->execute([$email]);
+    $row = $stmt->fetch();
+
+    if ($row) {
         $imagen = $row["imagen"];
         $nameN = $row["nameN"];
     }
 }
-?>      
+?>
+   
 
 <!DOCTYPE html>
 <html lang="es">
