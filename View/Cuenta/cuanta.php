@@ -34,6 +34,7 @@ if ($email) {
     <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
     <link rel="stylesheet" href="StyleC.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../headerComun.css">
 </head>
 
 <body>

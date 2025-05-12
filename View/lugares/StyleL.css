@@ -40,7 +40,7 @@ body {
 }
 
 a {
-    color: #d1c4e9;
+    color:var(--color-input-background);
     text-decoration: none;
 }
 
