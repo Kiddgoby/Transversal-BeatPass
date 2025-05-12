@@ -1,16 +1,34 @@
 :root {
-    --Color-principal: #1c1c1c;
-    --Color-secundario: #494979;
-    --Color-secundario-flojo: #6f6dbe;
-    --Color-letras: #ffffff;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-links: 'Oswald', sans-serif;
 
-    --fuente-titulo: 'Bebas Neue', sans-serif;
-    --fuente-subtitulo: 'Oswald', sans-serif;
-    --fuente-info: 'Montserrat', sans-serif;
+    --color-background: #121212;
+    --color-surface: #1E1E1E;
+    --color-primary: #7E57C2;
+    --color-primary-variant: #5E35B1;
+    --color-secondary: #03DAC6;
+    --color-on-background: #E0E0E0;
+    --color-on-surface: #FFFFFF;
+    --color-on-primary: #FFFFFF;
+    --color-border: #333333;
+    --color-input-background: #2A2A2A; /* Slightly lighter than surface for inputs */
+    --color-input-border-focus: var(--color-primary);
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-shadow-hover: rgba(126, 87, 194, 0.4);
+    --color-text-muted: #B0B0B0;
 
-    --font-titulo: 2rem;
-    --font-subtitulo: 1.3rem;
-    --font-normal: 0.95rem;
+    --padding-small: 0.5rem;
+    --padding-standard: 1rem;
+    --padding-large: 1.5rem;
+    --padding-xlarge: 2rem;
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --transition-speed: 0.3s;
+
+    --font-size-normal: 1rem;
+    --font-size-large: 1.75rem;
+    --font-size-xlarge: 2.5rem; 
 }
 
 body {
@@ -29,28 +47,6 @@ a {
 a:hover {
     color: #c084fc;
     text-decoration: underline;
-}
-
-header {
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100vw; 
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--Color-secundario);
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
 }
 
 .izquierda img {

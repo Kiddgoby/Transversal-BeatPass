@@ -1,17 +1,35 @@
 /* VARIABLES */
 :root {
-    --Color-principal: #1c1c1c;
-    --Color-secundario: #494979;
-    --Color-secundario-flojo: #6f6dbe;
-    --Color-letras: rgb(255, 255, 255);
-    --fuente-titulo: 'Bebas Neue', sans-serif;
-    --fuente-subtitulo: 'Oswald', sans-serif;
-    --fuente-info: 'Montserrat', sans-serif;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-links: 'Oswald', sans-serif;
 
-    /* Tamaños base (por defecto móvil) */
-    --font-titulo: 2rem;
-    --font-subtitulo: 1.5rem;
-    --font-normal: 1rem;
+    --color-background: #121212;
+    --color-surface: #1E1E1E;
+    --color-primary: #7E57C2;
+    --color-primary-variant: #5E35B1;
+    --color-secondary: #03DAC6;
+    --color-on-background: #E0E0E0;
+    --color-on-surface: #FFFFFF;
+    --color-on-primary: #FFFFFF;
+    --color-border: #333333;
+    --color-input-background: #2A2A2A; /* Slightly lighter than surface for inputs */
+    --color-input-border-focus: var(--color-primary);
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-shadow-hover: rgba(126, 87, 194, 0.4);
+    --color-text-muted: #B0B0B0;
+
+    --padding-small: 0.5rem;
+    --padding-standard: 1rem;
+    --padding-large: 1.5rem;
+    --padding-xlarge: 2rem;
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --transition-speed: 0.3s;
+
+    --font-size-normal: 1rem;
+    --font-size-large: 1.75rem;
+    --font-size-xlarge: 2.5rem; 
 }
 
 /* TITULOS */
@@ -53,52 +71,6 @@ body {
     align-items: center;
     width: 100%;
     overflow-x: hidden;
-}
-
-/* Header */
-header {
-    width: 100%;
-    background-color: var(--Color-secundario);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.izquierda img {
-    width: 60px;
-    height: auto;
-}
-
-.titulo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    text-align: center;
-}
-
-.derecha {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-header a {
-    text-decoration: none;
-    color: var(--Color-letras);
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
-}
-
-header a:hover {
-    color: var(--Color-secundario-flojo);
 }
 
 /* Artículo principal */

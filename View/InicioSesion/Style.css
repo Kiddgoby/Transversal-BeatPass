@@ -48,37 +48,13 @@ body {
 }
 
 /* =======================================
-   HEADER (encabezado superior)
-   ======================================= */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: var(--Color-secundario);
-    height: 60px;
-    position: fixed; /* Fijo arriba */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Para estar encima de todo */
-}
-
-header h1 {
-    color: var(--Color-letras);
-    margin: 0;
-    font-size: 2.5rem;
-    text-align: center;
-}
-
-/* =======================================
    MAIN (contenido principal)
    ======================================= */
 main {
     flex: 1;
-    margin-top: 80px; /* Separación para no tapar el contenido con el header */
+    margin-top: 3rem; /* Separación para no tapar el contenido con el header */
     width: 100%;
-    padding: 20px;
+    padding: 0.1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,37 +95,60 @@ form {
 }
 
 .input-group label {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-family: var(--font-links); /* Using Oswald for labels */
+    font-size: var(--font-size-normal);
+    color: var(--color-text-muted);
+    margin-bottom: var(--padding-small);
+    font-weight: 500;
 }
 
 .input-group input {
-    padding: 10px;
-    border: 1px solid #888;
-    border-radius: 5px;
-    background-color: var(--Color-bg-l); /* Color de fondo definido */
-    color: var(--Color-letras); /* Texto blanco */
+    padding: 0.85rem var(--padding-standard);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-input-background);
+    color: var(--color-on-background);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-normal);
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-/* =======================================
-   BOTONES
-   ======================================= */
+.input-group input:focus {
+    outline: none;
+    border-color: var(--color-input-border-focus);
+    box-shadow: 0 0 0 3px var(--color-shadow-hover);
+}
+
+/* BOTONES */
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    gap: var(--padding-standard);
+    margin-top: var(--padding-standard);
 }
 
-.buttons button {
-    background-color: var(--Color-secundario-flojo); /* Color de botón */
+.buttons button, .buttons a button { /* Target both direct buttons and buttons inside links */
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
     border: none;
-    border-radius: 5px;
-    padding: 10px;
-    color: var(--Color-letras); /* Color del texto del botón */
-    font-weight: bold;
+    border-radius: var(--border-radius-medium);
+    padding: 0.85rem var(--padding-large);
+    font-family: var(--font-links);
+    font-size: var(--font-size-normal);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    width: 100%; /* Make buttons full width */
+    text-align: center;
+}
+
+.buttons button:hover,
+.buttons a button:hover {
+    background-color: var(--color-primary-variant);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--color-shadow-hover);
 }
 
 /* Efecto hover cuando pasamos el ratón */
@@ -240,6 +239,14 @@ y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
     }
 
 }
+
+@media (max-width: 745px) {
+    #IrRegister, #Login {
+        min-height: 5rem;
+
+    }
+}
+
 @media (min-width: 769px) {
     :root {
         --font-titulo: 4rem;
@@ -266,7 +273,7 @@ y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
         flex-direction: row;
         align-items: center;
         max-width: 40%;
-        margin-top: 5rem;
+        margin-top: 2rem;
     }
 
     /* Alineamos el texto del título a la izquierda */
@@ -276,6 +283,7 @@ y después hacemos los cambios solo para pantallas grandes (mayores a 768px)
     
     /* Aumentamos el tamaño del título */
     .left-section h1 {
+        margin-right: 4rem;
         font-size: 6rem;
         white-space: pre-line; /* Permitimos saltos de línea automáticos */
     }

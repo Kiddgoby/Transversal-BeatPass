@@ -19,6 +19,7 @@
 
     <!-- Enlace a nuestro archivo de estilos personalizados -->
     <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="../headerComun.css">
 
     <!-- Enlace a las fuentes externas de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -41,22 +42,19 @@
             <!-- Formulario de Inicio de Sesión -->
             <form action="../../Controler/Controlador.php" method="POST">
                 <div class="input-group">
-                    <label class="info" for="gmail" class="subtitulo">Correo electrónico:</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Correo electrónico:</label> <!-- Eliminadas clases info y subtitulo, el estilo viene de .input-group label -->
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                 </div>
 
                 <div class="input-group">
-                    <label class="info" for="password" class="subtitulo">Contraseña:</label>
-                    <input type="password" id="password" name="password">
+                    <label for="password">Contraseña:</label> <!-- Eliminadas clases info y subtitulo -->
+                    <input type="password" id="password" name="password" placeholder="Tu contraseña" required>
                 </div>
 
-                <!-- Botones para enviar formulario o ir a registro -->
                 <div class="buttons">
-                    <button type="submit" name="Login" id="Login" class="button">Iniciar Sesión</button>
-
-                    <!-- Botón para ir al registro (no envía formulario) -->
+                    <button type="submit" name="Login" id="Login">Iniciar Sesión</button> <!-- Eliminada clase button, estilo general para buttons button -->
                     <a href="../Registro/Registro.html">
-                        <button type="button" id="IrRegister" name="IrRegister">Registrarme</button>
+                        <button type="button" id="IrRegister" name="IrRegister" class="button-secondary">Registrarme</button> <!-- Clase para estilo secundario -->
                     </a>
                 </div>
             </form>
