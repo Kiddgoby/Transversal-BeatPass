@@ -1,5 +1,5 @@
 /* ============================= */
-/* VARIABLES Y TIPOGRAFÍA       */
+/* VARIABLES Y TIPOGRAFÍA        */
 /* ============================= */
 :root {
     --font-primary: 'Montserrat', sans-serif;
@@ -36,7 +36,7 @@
 
 /* TITULOS */
 .titulo {
-    font-family: var(--font-primary);
+    font-family: var(--font-normal);
     font-size: var(--font-size-xlarge);
     text-align: center;
     margin: 20px 0;
@@ -48,7 +48,7 @@
 }
 
 .info {
-    font-family: var(--font-size-normal);
+    font-family: var(--font-links);
     font-size: var(--font-size-normal);
     line-height: 1.5;
 }
@@ -63,7 +63,7 @@ body {
     flex-direction: column;
     align-items: center;
     color: var(--color-background);
-    font-family: var(--font-titulo);
+    font-family: var(--font-display);
     min-height: 100vh;
     padding: 0;
 }
@@ -111,7 +111,7 @@ button {
     border-radius: 8px;
     padding: 10px 20px;
     font-size: 1rem;
-    font-family: var(--font-subtitulo);
+    font-family: var(--font-display);
     cursor: pointer;
     margin: 10px 0;
     transition: background-color 0.3s ease;
