@@ -3,25 +3,32 @@
     --font-display: 'Bebas Neue', sans-serif;
     --font-links: 'Oswald', sans-serif;
 
-    --color-background: #121212; /* Very dark grey, almost black */
-    --color-surface: #1E1E1E;    /* Dark grey for cards, sections */
-    --color-primary: #7E57C2;   /* Deep purple - accent */
-    --color-primary-variant: #5E35B1; /* Darker purple */
-    --color-secondary: #03DAC6;  /* Teal - secondary accent */
-    --color-on-background: #E0E0E0; /* Light grey for text on dark background */
-    --color-on-surface: #FFFFFF;   /* White for text on surface elements */
-    --color-on-primary: #FFFFFF;   /* White for text on primary color */
-    --color-border: #333333;     /* Subtle borders */
+    --color-background: #121212;
+    --color-surface: #1E1E1E;
+    --color-primary: #7E57C2;
+    --color-primary-variant: #5E35B1;
+    --color-secondary: #03DAC6;
+    --color-on-background: #E0E0E0;
+    --color-on-surface: #FFFFFF;
+    --color-on-primary: #FFFFFF;
+    --color-border: #333333;
+    --color-input-background: #2A2A2A; /* Slightly lighter than surface for inputs */
+    --color-input-border-focus: var(--color-primary);
     --color-shadow: rgba(0, 0, 0, 0.2);
-    --color-shadow-hover: rgba(126, 87, 194, 0.4); /* Purple shadow on hover */
+    --color-shadow-hover: rgba(126, 87, 194, 0.4);
+    --color-text-muted: #B0B0B0;
 
-    --header-height-mobile: auto;
-    --header-height-desktop: 5.5rem; /* Increased slightly */
+    --padding-small: 0.5rem;
     --padding-standard: 1rem;
     --padding-large: 1.5rem;
+    --padding-xlarge: 2rem;
     --border-radius-small: 4px;
     --border-radius-medium: 8px;
     --transition-speed: 0.3s;
+
+    --font-size-normal: 1rem;
+    --font-size-large: 1.75rem;
+    --font-size-xlarge: 2.5rem; 
 }
 
 /* TITULOS */
@@ -56,22 +63,37 @@ body {
 
 /* ARTICLE - Contenedor del formulario */
 article {
-    margin-top: 7rem; /* Espacio para no tapar el header */
-    padding: 30px 20px;
-    background-color: var(--color-primary-variant);
+    margin-top: 1rem; /* Espacio para no tapar el header */
+    padding: 3rem 4rem;
+    background-color: var(--color-surface);
     border-radius: 12px; /* Bordes redondeados */
-    box-shadow: var(--color-secondary); /* Sombra suave */
+    box-shadow: var(--color-on-surface); /* Sombra suave */
     width: 90%;
     max-width: 360px; /* Ancho máximo en pantallas grandes */
     text-align: center;
+    color: var(--color-on-surface);
 }
 
 /* TÍTULOS DENTRO DEL ARTICLE */
 article h1 {
-    color: var(--color-background);
+    color: var(--color-primary);
     font-size: 1.8rem;
-    margin-bottom: 15px;
 }
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-small); 
+}
+
+.input-group label {
+    font-family: var(--font-links);
+    font-size: var(--font-size-normal);
+    color: var(--color-text-muted);
+    margin-bottom: var(--padding-small);
+}
+
 
 /* GRUPO DE DATOS (Inputs) */
 .datos {
@@ -83,16 +105,11 @@ article h1 {
 }
 
 /* INPUT GROUP - Caja de cada input */
-.input-group {
-    text-align: left;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
 
 /* INPUTS */
 .input-group input {
     width: 90%;
-    padding: 12px;
+    padding: 1rem;
     font-size: 1rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -106,10 +123,12 @@ article h1 {
     flex-direction: column;
     gap: 15px;
     margin-top: 25px;
+    flex-direction: column; /* Pone los botones uno al lado del otro */
+
 }
 
 .buttons button {
-    background-color: var(--color-background);
+    background-color: var(--color-primary);
     border: none;
     border-radius: 8px;
     padding: 12px;
