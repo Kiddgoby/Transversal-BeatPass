@@ -34,19 +34,19 @@
 
 /* TITULOS */
 .titulo {
-    font-family: var(--fuente-titulo);
+    font-family: var(--font-titulo);
     font-size: 2rem;
     text-align: center;
     margin: 20px 0;
 }
 
 .subtitulo {
-    font-family: var(--fuente-subtitulo);
+    font-family: var(--font-subtitulo);
     font-size: 1.5rem;
 }
 
 .info {
-    font-family: var(--fuente-info);
+    font-family: var(--font-display);
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -63,8 +63,8 @@ a{
 }
 
 body {
-    background-color: var(--Color-principal);
-    color: var(--Color-letras);
+    background-color: var(--color-background);
+    color: var(--color-on-primary);
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
@@ -111,6 +111,7 @@ section.more-info {
 section.select-info,
 section.info {
     background-color: #2f2f3f;
+    color: var(--color-on-surface);
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -134,7 +135,7 @@ section.info {
     background-color: #1e1e2f;
     border: 1px solid #888;
     border-radius: 5px;
-    color: var(--Color-letras);
+    color: var(--color-text-muted);
     font-size: 1rem;
 }
 
@@ -157,14 +158,14 @@ section.info {
 }
 
 .buttons button:hover {
-    background-color: var(--Color-secundario-flojo);
+    background-color: var(--color-primary-variant);
 }
 
 /* Footer */
 footer {
     width: 100%;
-    background-color: var(--Color-secundario);
-    color: var(--Color-letras);
+    background-color: var(--color-background);
+    color: var(--color-on-primary);
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
