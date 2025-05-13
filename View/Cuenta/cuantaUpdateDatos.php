@@ -44,21 +44,20 @@ if ($userController->update($email, $nameN, $password, $imagen)) {
             <img src="../../uploads/<?= htmlspecialchars($imagen) ?>" alt="Imagen de perfil">
         <?php endif; ?>
 
-        <form action="procesarUpdate.php" method="post" enctype="multipart/form-data">
-            <label for="nameN">Nombre de usuario:</label>
-            <input type="text" name="nameN" id="nameN" value="<?= $nameN ?>" required>
+        <<form method="POST" action="../../Controller/UserController.php" enctype="multipart/form-data">
+            <input type="text" name="nameN" value="<?php echo $_SESSION['nameN'] ?? ''; ?>" required>
 
-            <label for="email">Correo electrónico (no editable):</label>
-            <input type="email" name="email" id="email" value="<?= $email ?>" readonly>
+            <input type="email" name="email" value="<?php echo $_SESSION['email'] ?? ''; ?>" readonly>
 
-            <label for="password">Nueva contraseña:</label>
-            <input type="password" name="password" id="password" placeholder="Déjalo vacío si no deseas cambiarla">
+            <input type="password" name="password" placeholder="Nueva contraseña">
 
-            <label for="imagen">Cambiar imagen de perfil:</label>
-            <input type="file" name="imagen" id="imagen" accept="image/*">
+            <input type="file" name="imagen">
+            <?php if (!empty($_SESSION['imagen'])): ?>
+                <img src="../uploads/<?php echo $_SESSION['imagen']; ?>" width="100" height="100" alt="Imagen actual">
+            <?php endif; ?>
 
-            <input type="submit" value="Guardar cambios">
-        </form>
+            <button type="submit" name="update">Actualizar</button>
+    </form>
     </div>
 </body>
 </html>

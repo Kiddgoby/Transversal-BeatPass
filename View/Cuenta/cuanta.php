@@ -90,7 +90,7 @@ if ($email) {
         <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
     </a>
 
-    <a href="../Cuenta/cuantaUpdateDatos.php">
+    <a href="../Cuenta/cuentaUpdateDatos.php">
         <button type="submit" name="Modificar" id="Modificar" class="button">Modificar Perfil</button>
     </a>
     
