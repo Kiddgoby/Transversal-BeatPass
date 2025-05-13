@@ -16,6 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST["cuenta"])) {
         $UserController->cuenta();
         echo __LINE__;
+    } elseif (isset($_POST["update"])) {
+        $email = $_SESSION["email"] ?? null;
+        $nameN = trim($_POST["nameN"]);
+        $password = trim($_POST["password"]) ?: null;
+        $imagen = $_FILES["imagen"] ?? null;
+
+        $UserController->update($email, $nameN, $password, $imagen);
+        echo __LINE__;
     }
 }
 
@@ -50,8 +58,7 @@ class UserController {
             $_SESSION["logged"] = true;
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["contrasena"];
-
-            header("Location: ../View/Inicio/inicio.html"); 
+            header("Location: ../View/Inicio/inicio.html");
             return true;
         } else {
             $_SESSION["logged"] = false;
@@ -134,17 +141,18 @@ class UserController {
         exit();
     }
 
-    public function actualizarUsuario(string $email, string $nameN, ?string $password, ?array $imagen): bool {
-    try {
-        // Obtener imagen actual
-        $stmt = $this->pdo->prepare("SELECT imagen FROM usuarios WHERE email = ?");
-        $stmt->execute([$email]);
-        $imagenActual = $stmt->fetchColumn();
+    public function update(string $email, string $nameN, ?string $password, ?array $imagen): void {
+        $sql = "UPDATE usuarios SET nameN = ?";
+        $params = [$nameN];
 
-        $imagenNombre = $imagenActual;
+        if (!empty($password)) {
+            $sql .= ", contrasena = ?";
+            $params[] = $password;
+        }
 
-        // Si hay nueva imagen
-        if ($imagen && $imagen["error"] === UPLOAD_ERR_OK) {
+        $imagenNombre = null;
+
+        if ($imagen && $imagen["error"] == 0) {
             $imagenTmp = $imagen["tmp_name"];
             $imagenNombre = basename($imagen["name"]);
             $rutaDestino = "../uploads/" . $imagenNombre;
@@ -153,28 +161,20 @@ class UserController {
                 mkdir("../uploads", 0777, true);
             }
 
-            if (!move_uploaded_file($imagenTmp, $rutaDestino)) {
-                echo "Error al subir la imagen.";
-                return false;
+            if (move_uploaded_file($imagenTmp, $rutaDestino)) {
+                $sql .= ", imagen = ?";
+                $params[] = $imagenNombre;
             }
         }
 
-        // Construir query según si hay nueva contraseña
-        if (!empty($password)) {
-            $query = "UPDATE usuarios SET nameN = ?, contrasena = ?, imagen = ? WHERE email = ?";
-            $stmt = $this->pdo->prepare($query);
-            return $stmt->execute([$nameN, $password, $imagenNombre, $email]);
-        } else {
-            $query = "UPDATE usuarios SET nameN = ?, imagen = ? WHERE email = ?";
-            $stmt = $this->pdo->prepare($query);
-            return $stmt->execute([$nameN, $imagenNombre, $email]);
-        }
+        $sql .= " WHERE email = ?";
+        $params[] = $email;
 
-    } catch (PDOException $e) {
-        echo "Error al actualizar usuario: " . $e->getMessage();
-        return false;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        header("Location: ../View/Cuenta/cuenta.php");
+        exit();
     }
-}
-
 }
 ?>

@@ -15,7 +15,7 @@ $nameN = trim($_POST["nameN"]);
 $password = trim($_POST["password"]) ?: null;
 $imagen = $_FILES["imagen"] ?? null;
 
-if ($userController->actualizarUsuario($email, $nameN, $password, $imagen)) {
+if ($userController->update($email, $nameN, $password, $imagen)) {
     $_SESSION["imagen"] = $imagen["name"] ?? $_SESSION["imagen"];
     header("Location: ../Cuenta/cuenta.php");
 } else {
