@@ -84,7 +84,15 @@ if ($email) {
 
     <form action="../../Controler/Controlador.php" method="POST">
         <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
-    </form>
+        </form>
+
+    <a href="../Inicio/inicio.html">
+        <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
+    </a>
+
+    <a href="../Cuenta/cuantaUpdateDatos.html">
+        <button type="submit" name="update" id="update" class="button">Modificar Perfil</button>
+    </a>
     
     <footer>
         <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
