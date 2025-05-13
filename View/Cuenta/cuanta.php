@@ -38,8 +38,24 @@ if ($email) {
 </head>
 
 <body>
-    <header>
+<header>
+        <div class="left">
+            <div class="izquierda">
+                <a href="../Inicio/inicio.html">
+                    <img src="../logoBilleteArnau.png" alt="">
+                </a>    
+            </div>
+        </div>
+
         <h1 class="titulo">Beat Pass</h1>
+        
+        <div class="rigth">    
+            <!-- Posivilidades dentro de la web -->
+            <a href="../eventos/eventos.html">Eventos</a>
+            <a href="../lugares/Lugares.html">Lugares</a>
+            <a href="../Cuenta/cuanta.php">Cuenta</a>  
+            <a href="../Inicio/inicio.html">Inicio</a>      
+        </div>
     </header>
 
     <main class="pagina">
@@ -68,7 +84,15 @@ if ($email) {
 
     <form action="../../Controler/Controlador.php" method="POST">
         <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
-    </form>
+        </form>
+
+    <a href="../Inicio/inicio.html">
+        <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
+    </a>
+
+    <a href="../Cuenta/cuantaUpdateDatos.html">
+        <button type="submit" name="update" id="update" class="button">Modificar Perfil</button>
+    </a>
     
     <footer>
         <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
