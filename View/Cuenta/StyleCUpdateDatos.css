@@ -57,12 +57,12 @@
 /* ESTILOS GENERALES            */
 /* ============================= */
 body {
-    background-color: var(--Color-principal);
+    background-color: var(--color-input-background);
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--Color-letras);
+    color: var(--color-on-surface);
     font-family: var(--fuente-info);
     min-height: 100vh;
     padding: 0;
@@ -83,7 +83,7 @@ main.pagina {
 
 /* PERFIL */
 .perfil {
-    background-color: var(--Color-secundario);
+    background-color: var(--color-primary);
     padding: 1rem;
     border-radius: 2rem;
     width: 100%;
@@ -105,7 +105,7 @@ main.pagina {
 .perfil .button,
 #logout,
 button {
-    background-color: var(--Color-secundario-flojo);
+    background-color: var(--color-primary-variant);
     color: white;
     border: none;
     border-radius: 8px;
@@ -138,7 +138,7 @@ button:hover {
 /* ============================= */
 footer {
     width: 100%;
-    background-color: var(--Color-secundario);
+    background-color: var(--color-border);
     color: var(--Color-letras);
     text-align: center;
     padding: 20px 0;
