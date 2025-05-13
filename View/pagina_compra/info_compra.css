@@ -28,7 +28,7 @@
     --transition-speed: 0.3s;
 
     --font-size-normal: 1rem;
-    --font-size-large: 1.75rem;
+    --font-size-large: 1.25rem;
     --font-size-xlarge: 2.5rem; 
 }
 
@@ -211,6 +211,11 @@ footer {
     }
 
     article.all {
+        background-color: var(--color-input-background);
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        width: 90%;
+        border-radius: 0.5rem;
         flex-direction: row;
         justify-content: space-between;
         padding: 20px;
@@ -219,7 +224,7 @@ footer {
     }
 
     section.img {
-        width: 50%;
+        width: 40%;
         padding-right: 20px;
     }
 
@@ -246,6 +251,16 @@ footer {
     
     .input-group{
         font-size: var(--font-normal);
+    }
+
+    article.all p {
+        margin-right: 5rem;
+        font-size: var(--font-size-large);
+    }
+
+    article.all h2{
+        margin-right: 24.9rem;
+        font-size: var(--font-size-xlarge);
     }
 
     
