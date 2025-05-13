@@ -51,7 +51,7 @@ class UserController {
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["contrasena"];
 
-            header("Location: ../View/Inicio/inicio.html");
+            header("Location: ../View/Inicio/inicio.html"); 
             return true;
         } else {
             $_SESSION["logged"] = false;
@@ -133,5 +133,48 @@ class UserController {
         }
         exit();
     }
+
+    public function actualizarUsuario(string $email, string $nameN, ?string $password, ?array $imagen): bool {
+    try {
+        // Obtener imagen actual
+        $stmt = $this->pdo->prepare("SELECT imagen FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+        $imagenActual = $stmt->fetchColumn();
+
+        $imagenNombre = $imagenActual;
+
+        // Si hay nueva imagen
+        if ($imagen && $imagen["error"] === UPLOAD_ERR_OK) {
+            $imagenTmp = $imagen["tmp_name"];
+            $imagenNombre = basename($imagen["name"]);
+            $rutaDestino = "../uploads/" . $imagenNombre;
+
+            if (!file_exists("../uploads")) {
+                mkdir("../uploads", 0777, true);
+            }
+
+            if (!move_uploaded_file($imagenTmp, $rutaDestino)) {
+                echo "Error al subir la imagen.";
+                return false;
+            }
+        }
+
+        // Construir query según si hay nueva contraseña
+        if (!empty($password)) {
+            $query = "UPDATE usuarios SET nameN = ?, contrasena = ?, imagen = ? WHERE email = ?";
+            $stmt = $this->pdo->prepare($query);
+            return $stmt->execute([$nameN, $password, $imagenNombre, $email]);
+        } else {
+            $query = "UPDATE usuarios SET nameN = ?, imagen = ? WHERE email = ?";
+            $stmt = $this->pdo->prepare($query);
+            return $stmt->execute([$nameN, $imagenNombre, $email]);
+        }
+
+    } catch (PDOException $e) {
+        echo "Error al actualizar usuario: " . $e->getMessage();
+        return false;
+    }
+}
+
 }
 ?>
