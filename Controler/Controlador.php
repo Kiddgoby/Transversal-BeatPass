@@ -173,7 +173,7 @@ class UserController {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
 
-        header("Location: ../Cuenta/cuentaUpdateDatos.php");
+        header("Location: ../View/Cuenta/cuenta.php");
         exit();
     }
 }
