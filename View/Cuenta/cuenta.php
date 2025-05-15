@@ -2,14 +2,15 @@
 
 require_once "../../Controler/Controlador.php";  
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-session_start();
 $email = $_SESSION["email"] ?? null;
 $imagen = null;
 $nameN = null;
 
 if ($email) {
-
     $userController = new UserController();
 
     $query = "SELECT nameN, imagen FROM usuarios WHERE email = ?";
@@ -23,8 +24,6 @@ if ($email) {
     }
 }
 ?>
-   
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,9 +31,11 @@ if ($email) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beat Pass - Cuenta</title>
+    
     <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
-    <link rel="stylesheet" href="StyleC.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="StyleC.css">
     <link rel="stylesheet" href="../headerComun.css">
 </head>
 
@@ -54,7 +55,7 @@ if ($email) {
             <!-- Posivilidades dentro de la web -->
             <a href="../eventos/eventos.html">Eventos</a>
             <a href="../lugares/Lugares.html">Lugares</a>
-            <a href="../Cuenta/cuanta.php">Cuenta</a>  
+            <a href="../Cuenta/cuenta.php">Cuenta</a>  
             <a href="../Inicio/inicio.html">Inicio</a>      
         </div>
     </header>
