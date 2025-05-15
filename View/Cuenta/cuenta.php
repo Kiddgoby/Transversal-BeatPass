@@ -2,6 +2,8 @@
 
 require_once "../../Controler/Controlador.php";  
 
+
+session_start();
 $email = $_SESSION["email"] ?? null;
 $imagen = null;
 $nameN = null;
@@ -9,7 +11,6 @@ $nameN = null;
 if ($email) {
 
     $userController = new UserController();
-
 
     $query = "SELECT nameN, imagen FROM usuarios WHERE email = ?";
     $stmt = $userController->getConnection()->prepare($query);
@@ -82,9 +83,7 @@ if ($email) {
         </article>
     </main>
 
-    <form action="../../Controler/Controlador.php" method="POST">
-        <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
-        </form>
+  
 
     <a href="../Inicio/inicio.html">
         <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
@@ -93,6 +92,9 @@ if ($email) {
     <a href="../Cuenta/cuentaUpdateDatos.php">
         <button type="submit" name="Modificar" id="Modificar" class="button">Modificar Perfil</button>
     </a>
+      <form action="../../Controler/Controlador.php" method="POST">
+        <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
+        </form>
     
     <footer>
         <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
