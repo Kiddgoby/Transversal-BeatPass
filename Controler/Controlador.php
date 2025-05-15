@@ -125,18 +125,7 @@ class UserController {
 
     public function cuenta(): void {
         if ($_SESSION["email"] == "administrador1234@gmail.com") {
-            header("Location: ../Cuenta/cuentaAdmin.html");
-        } else {
-            $query = "SELECT imagen FROM usuarios WHERE email = ?";
-            $stmt = $this->pdo->prepare($query);
-            $stmt->execute([$_SESSION["email"]]);
-            $row = $stmt->fetch();
-
-            if ($row) {
-                $_SESSION["imagen"] = $row["imagen"];
-            }
-
-            header("Location: ../Cuenta/cuenta.php");
+            $_SESSION["admin"] = true;
         }
         exit();
     }
