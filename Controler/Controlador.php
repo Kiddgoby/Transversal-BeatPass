@@ -16,6 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST["cuenta"])) {
         $UserController->cuenta();
         echo __LINE__;
+    } elseif (isset($_POST["update"])) {
+        $email = $_SESSION["email"] ?? null;
+        $nameN = trim($_POST["nameN"]);
+        $password = trim($_POST["password"]) ?: null;
+        $imagen = $_FILES["imagen"] ?? null;
+
+        $UserController->update($email, $nameN, $password, $imagen);
+        echo __LINE__;
     }
 }
 
@@ -50,7 +58,6 @@ class UserController {
             $_SESSION["logged"] = true;
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["contrasena"];
-
             header("Location: ../View/Inicio/inicio.html");
             return true;
         } else {
@@ -131,6 +138,42 @@ class UserController {
 
             header("Location: ../Cuenta/cuenta.php");
         }
+        exit();
+    }
+
+    public function update(string $email, string $nameN, ?string $password, ?array $imagen): void {
+        $sql = "UPDATE usuarios SET nameN = ?";
+        $params = [$nameN];
+
+        if (!empty($password)) {
+            $sql .= ", contrasena = ?";
+            $params[] = $password;
+        }
+
+        $imagenNombre = null;
+
+        if ($imagen && $imagen["error"] == 0) {
+            $imagenTmp = $imagen["tmp_name"];
+            $imagenNombre = basename($imagen["name"]);
+            $rutaDestino = "../uploads/" . $imagenNombre;
+
+            if (!file_exists("../uploads")) {
+                mkdir("../uploads", 0777, true);
+            }
+
+            if (move_uploaded_file($imagenTmp, $rutaDestino)) {
+                $sql .= ", imagen = ?";
+                $params[] = $imagenNombre;
+            }
+        }
+
+        $sql .= " WHERE email = ?";
+        $params[] = $email;
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        header("Location: ../Cuenta/cuenta.php");
         exit();
     }
 }
