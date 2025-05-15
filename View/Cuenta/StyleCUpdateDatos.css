@@ -105,7 +105,7 @@ main.pagina {
 .perfil .button,
 #logout,
 button {
-    background-color: var(--Color-secundario-flojo);
+    background-color: var(--color-secondary);
     color: white;
     border: none;
     border-radius: 8px;
@@ -122,7 +122,7 @@ button {
 .perfil .button:hover,
 #logout:hover,
 button:hover {
-    background-color: var(--Color-secundario);
+    background-color: var(--color-secondary);
 }
 
 #nuevaImagen {
