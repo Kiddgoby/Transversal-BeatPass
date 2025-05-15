@@ -62,7 +62,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--color-background);
+    color: var(--color-on-surface);
     font-family: var(--font-display);
     min-height: 100vh;
     padding: 0;
@@ -83,13 +83,13 @@ main.pagina {
 
 /* PERFIL */
 .perfil {
-    background-color: var(--color-primary-variant);
+    background-color: var(--color-input-background);
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     width: 100%;
     max-width: 400px;
     text-align: center;
-    box-shadow: 0 2px 8px var(--color-primary);
+    box-shadow: 0 2px 8px var(--color-border);
 }
 
 .perfil .principio img {
@@ -201,7 +201,7 @@ footer {
 
     .perfil {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
         padding: 2rem;
@@ -223,7 +223,19 @@ footer {
         width: 100%;
         height: auto;
     }
+    .infoPerfil{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
+    }
+    .posibilidades{
+        width: 52%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
     .perfil .datos {
         flex: 1 1 auto;
     }

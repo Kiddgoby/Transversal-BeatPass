@@ -62,41 +62,46 @@ if ($email) {
 
     <main class="pagina">
         <article class="perfil">
-            <div class="principio">
-                <h2 class="titulo"><?= htmlspecialchars($nameN) ?></h2>
+            <div class="infoPerfil">
+                <div class="principio">
+                    <h2 class="titulo"><?= htmlspecialchars($nameN) ?></h2>
 
-                <?php if (!empty($imagen)): ?>
-                    <img src="../../uploads/<?= htmlspecialchars($imagen) ?>" alt="Imagen de perfil" id="imagenPerfil" style="width: 150px; height: 150px; border-radius: 50%;">
+                    <?php if (!empty($imagen)): ?>
+                        <img src="../../uploads/<?= htmlspecialchars($imagen) ?>" alt="Imagen de perfil" id="imagenPerfil" style="width: 150px; height: 150px; border-radius: 50%;">
 
-                <?php else: ?>
-                    <p>No hay imagen de perfil</p>
-                <?php endif; ?>
+                    <?php else: ?>
+                        <p>No hay imagen de perfil</p>
+                    <?php endif; ?>
+                </div>
+
+                <div class="datos">
+                    <p class="titulo">Próximos conciertos:</p>
+                    <p class="info">Aún no hay conciertos. ¡Explora nuestra web y encuentra las mejores ofertas!</p>
+                </div>
+            </div>
+            
+            <div class="posibilidades">
+                <a href="../Inicio/inicio.html">
+                    <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
+                </a>
+            
+                <a href="../Cuenta/cuentaUpdateDatos.php">
+                    <button type="submit" name="Modificar" id="Modificar" class="button">Modificar Perfil</button>
+                </a>
+                <form action="../../Controler/Controlador.php" method="POST">
+                    <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
+                </form>
             </div>
 
-            <div class="datos">
-                <p class="titulo">Próximos conciertos:</p>
-                <p class="info">Aún no hay conciertos. ¡Explora nuestra web y encuentra las mejores ofertas!</p>
-            </div>
         </article>
 
-        <article class="derecha">
+        <!-- <article class="derecha">
             <img src="../../Imagenes_A_Usar/pexels-photo-976866..png" alt="Decoración Beat Pass" class="decorativa">
-        </article>
+        </article> -->
     </main>
 
   
 
-    <a href="../Inicio/inicio.html">
-        <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
-    </a>
-
-    <a href="../Cuenta/cuentaUpdateDatos.php">
-        <button type="submit" name="Modificar" id="Modificar" class="button">Modificar Perfil</button>
-    </a>
-      <form action="../../Controler/Controlador.php" method="POST">
-        <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
-        </form>
-    
     <footer>
         <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
     </footer>
