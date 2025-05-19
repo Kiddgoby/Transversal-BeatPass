@@ -127,6 +127,7 @@ class UserController {
     public function cuenta(): void {
         if ($_SESSION["email"] == "administrador1234@gmail.com") {
             $_SESSION["admin"] = true;
+            header("Location: ../View/Cuenta/cuenta_Admin.php");         
         }
         exit();
     }

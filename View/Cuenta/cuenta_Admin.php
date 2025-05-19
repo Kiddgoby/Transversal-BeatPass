@@ -5,8 +5,11 @@ require_once "../../Controler/Controlador.php";
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
-$email = $_SESSION["email"] ?? null;
+if(isset($_GET['email'])){
+    $email =  $_GET['email'];
+}else{
+    $email = $_SESSION["email"] ?? null;
+}
 $imagen = null;
 $nameN = null;
 
