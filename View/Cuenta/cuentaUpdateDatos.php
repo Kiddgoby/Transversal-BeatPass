@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <form method="POST" enctype="multipart/form-data">
-            <input type="text" name="nameN" value=" <?php echo$_SESSION['nameN'] ?? ''; ?>" required>
+            <input type="text" name="nameN" value="<?= htmlspecialchars($_SESSION['nameN'] ?? '') ?>" readonly>
 
             <input type="email" name="email" value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>" readonly>
 

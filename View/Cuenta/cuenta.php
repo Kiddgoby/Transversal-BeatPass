@@ -41,24 +41,24 @@ if ($email) {
 
 <body>
 <header>
-        <div class="left">
-            <div class="izquierda">
-                <a href="../Inicio/inicio.html">
-                    <img src="../logoBilleteArnau.png" alt="">
-                </a>    
-            </div>
+    <div class="left">
+        <div class="izquierda">
+            <a href="../Inicio/inicio.html">
+                <img src="../logoBilleteArnau.png" alt="">
+            </a>    
         </div>
+    </div>
 
-        <h1 class="titulo">Beat Pass</h1>
-        
-        <div class="rigth">    
-            <!-- Posivilidades dentro de la web -->
-            <a href="../eventos/eventos.html">Eventos</a>
-            <a href="../lugares/Lugares.html">Lugares</a>
-            <a href="../Cuenta/cuenta.php">Cuenta</a>  
-            <a href="../Inicio/inicio.html">Inicio</a>      
-        </div>
-    </header>
+    <h1 class="titulo">Beat Pass</h1>
+    
+    <div class="rigth">    
+        <!-- Posivilidades dentro de la web -->
+        <a href="../eventos/eventos.html">Eventos</a>
+        <a href="../lugares/Lugares.html">Lugares</a>
+        <a href="../Cuenta/cuenta.php">Cuenta</a>  
+        <a href="../Inicio/inicio.html">Inicio</a>      
+    </div>
+</header>
 
     <main class="pagina">
         <article class="perfil">
@@ -94,10 +94,6 @@ if ($email) {
             </div>
 
         </article>
-
-        <!-- <article class="derecha">
-            <img src="../../Imagenes_A_Usar/pexels-photo-976866..png" alt="Decoración Beat Pass" class="decorativa">
-        </article> -->
     </main>
 
   

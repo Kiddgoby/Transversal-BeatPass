@@ -31,41 +31,41 @@
         <h1 class="titulo">Beat Pass</h1>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main class="pagina">
         <article class="perfil">
-            <div class="principio">
-                <h2 class="titulo">Administrador</h2>
-                <!-- Imagen actual del usuario -->
-                <img src="../artistas/d5412176-3e40-47a7-886a-c3c7e59f681a.jfif" alt="Imagen de perfil" id="imagenPerfil">
-        
-                <!-- Formulario para subir nueva imagen -->
-                <form action="cambiar_imagen.php" method="POST" enctype="multipart/form-data" style="text-align: center;">
-                    <!-- Input oculto -->
-                    <input type="file" name="nueva_imagen" id="nuevaImagen" accept="image/*" style="display: none;" required>
-                    
-                    <!-- Etiqueta que actúa como botón -->
-                    <label for="nuevaImagen" class="button">
-                        <h3>Seleccionar imagen</h3>
-                    </label>
-                
-                    <!-- Botón de subir
-                    <button type="submit" class="button" style="margin-top: 10px;">
-                        <h3>Subir imagen</h3>
-                    </button> -->
+            <div class="infoPerfil">
+                <div class="principio">
+                    <h2 class="titulo"><?= htmlspecialchars($nameN) ?></h2>
+
+                    <?php if (!empty($imagen)): ?>
+                        <img src="../../uploads/<?= htmlspecialchars($imagen) ?>" alt="Imagen de perfil" id="imagenPerfil" style="width: 150px; height: 150px; border-radius: 50%;">
+
+                    <?php else: ?>
+                        <p>No hay imagen de perfil</p>
+                    <?php endif; ?>
+                </div>
+
+                <div class="datos">
+                    <p class="titulo">Próximos conciertos:</p>
+                    <p class="info">Aún no hay conciertos. ¡Explora nuestra web y encuentra las mejores ofertas!</p>
+                </div>
+            </div>
+            
+            <div class="posibilidades">
+                <a href="../Inicio/inicio.html">
+                    <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
+                </a>
+            
+                <a href="../Cuenta/cuentaUpdateDatos.php">
+                    <button type="submit" name="Modificar" id="Modificar" class="button">Modificar Perfil</button>
+                </a>
+                <form action="../../Controler/Controlador.php" method="POST">
+                    <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
                 </form>
             </div>
-        
-            <div class="datos">
-                <p class="titulo">Proximos conciertos:</p>
-                <p class="info">Aun no hay conciertos a los que puedas acudiar explora nuestra web i encuentra las mejores ofertas</p>
-            </div>
-        </article>
-        <article class="derecha">
-            <img src="../../Imagenes_A_Usar/pexels-photo-976866..png" alt="Decoración Beat Pass" class="decorativa">
+
         </article>
     </main>
-
 
     <form action="../../Controler/Controlador.php" method="POST">
                     <button type="submit" name="logout" id="logout" class="button">Cerrar Sesion</button>
