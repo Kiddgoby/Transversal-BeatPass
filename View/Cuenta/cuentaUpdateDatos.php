@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once "../../Controler/Controlador.php";
 
 $email = $_SESSION["email"] ?? null;

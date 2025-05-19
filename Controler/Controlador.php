@@ -49,13 +49,14 @@ class UserController {
         $email = trim($_POST["email"]);
         $password = trim($_POST["password"]);
 
-        $query = "SELECT email, contrasena FROM usuarios WHERE email = ? AND contrasena = ?";
+        $query = "SELECT nameN, email, contrasena FROM usuarios WHERE email = ? AND contrasena = ?";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([$email, $password]);
         $row = $stmt->fetch();
 
         if ($row) {
             $_SESSION["logged"] = true;
+            $_SESSION["nameN"] = $row["nameN"];
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["contrasena"];
             header("Location: ../View/Inicio/inicio.html");
@@ -162,7 +163,7 @@ class UserController {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
 
-        header("Location: ../Cuenta/cuentaUpdateDatos.php");
+        header("Location: ../Cuenta/cuenta.php");
         exit();
     }
 }
