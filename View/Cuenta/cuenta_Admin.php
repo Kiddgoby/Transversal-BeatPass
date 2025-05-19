@@ -1,35 +1,64 @@
+<?php
+
+require_once "../../Controler/Controlador.php";  
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$email = $_SESSION["email"] ?? null;
+$imagen = null;
+$nameN = null;
+
+if ($email) {
+    $userController = new UserController();
+
+    $query = "SELECT nameN, imagen FROM usuarios WHERE email = ?";
+    $stmt = $userController->getConnection()->prepare($query);
+    $stmt->execute([$email]);
+    $row = $stmt->fetch();
+
+    if ($row) {
+        $imagen = $row["imagen"];
+        $nameN = $row["nameN"];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <!-- METADATOS Y ENLACES IMPORTANTES -->
-    
-    <!-- Enlace a Bootstrap para usar su sistema de estilos rápidos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Configuración de caracteres y vista para móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Pass - Cuenta</title>
     
-    <!-- Título que se muestra en la pestaña del navegador -->
-    <title>Beat Pass - Inicio de Sesión</title>
-
-    <!-- Ícono pequeño que aparece en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
-
-    <!-- Enlace a nuestro archivo de estilos personalizados -->
-    <link rel="stylesheet" href="../headerComun.css">
-    <link rel="stylesheet" href="StyleC.css">
-
-    <!-- Enlace a las fuentes externas de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="StyleC.css">
+    <link rel="stylesheet" href="../headerComun.css">
 </head>
 
 <body>
-    <!-- CABECERA de la página -->
-    <header>
-        <h1 class="titulo">Beat Pass</h1>
-    </header>
+<header>
+    <div class="left">
+        <div class="izquierda">
+            <a href="../Inicio/inicio.html">
+                <img src="../logoBilleteArnau.png" alt="">
+            </a>    
+        </div>
+    </div>
+
+    <h1 class="titulo">Beat Pass</h1>
+    
+    <div class="rigth">    
+        <!-- Posivilidades dentro de la web -->
+        <a href="../eventos/eventos.html">Eventos</a>
+        <a href="../lugares/Lugares.html">Lugares</a>
+        <a href="../Cuenta/cuenta.php">Cuenta</a>  
+        <a href="../Inicio/inicio.html">Inicio</a>      
+    </div>
+</header>
 
     <main class="pagina">
         <article class="perfil">
@@ -46,8 +75,7 @@
                 </div>
 
                 <div class="datos">
-                    <p class="titulo">Próximos conciertos:</p>
-                    <p class="info">Aún no hay conciertos. ¡Explora nuestra web y encuentra las mejores ofertas!</p>
+                    <p class="titulo">ira la foto</p>
                 </div>
             </div>
             
@@ -67,14 +95,10 @@
         </article>
     </main>
 
-    <form action="../../Controler/Controlador.php" method="POST">
-                    <button type="submit" name="logout" id="logout" class="button">Cerrar Sesion</button>
-    </form>
-    <!-- PIE DE PÁGINA -->
-    <br>
+  
+
     <footer>
         <p>&copy; 2025 Beat Pass. Todos los derechos reservados.</p>
-    </footer> 
+    </footer>
 </body>
-
 </html>
