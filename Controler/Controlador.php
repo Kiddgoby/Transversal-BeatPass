@@ -59,7 +59,7 @@ class UserController {
             $_SESSION["nameN"] = $row["nameN"];
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["contrasena"];
-            header("Location: ../View/Inicio/inicio.html");
+            header("Location: ../View/Inicio/inicio.php");
             return true;
         } else {
             $_SESSION["logged"] = false;

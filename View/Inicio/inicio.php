@@ -18,6 +18,16 @@
     <!-- Fuentes de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
 </head>
+
+<?php session_start(); ?>
+<?php $email = $_SESSION["email"] ?? null; ?>
+<script>
+    const emailFromPHP = <?php echo json_encode($email); ?>;
+    if (emailFromPHP) {
+        localStorage.setItem("email", emailFromPHP);
+    }
+</script>
+
 <body>
     <header>
         <div class="left">
