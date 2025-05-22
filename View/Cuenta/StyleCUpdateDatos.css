@@ -227,4 +227,8 @@ footer {
     .perfil .datos {
         flex: 1 1 auto;
     }
+
+    .input-group label{
+        background-color: var(--color-secondary);
+    }
 }
