@@ -9,25 +9,12 @@
     <title>Beat Pass</title>
     <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
 
-    <script src="inicio.js" defer></script>
-
-
     <link rel="stylesheet" href="../headerComun.css">
     <link rel="stylesheet" href="StyleInicio.css">
     
     <!-- Fuentes de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
 </head>
-
-<?php session_start(); ?>
-<?php $email = $_SESSION["email"] ?? null; ?>
-<script>
-    const emailFromPHP = <?php echo json_encode($email); ?>;
-    if (emailFromPHP) {
-        localStorage.setItem("email", emailFromPHP);
-    }
-</script>
-
 <body>
     <header>
         <div class="left">
@@ -41,7 +28,7 @@
         <h1 class="titulo">Beat Pass</h1>
         
         <div class="rigth">
-            <div class="idioma-selector">
+            <div class="idioma-selector"> 
                 <select onchange="window.location.href=this.value">
                   <option value="../Inicio/inicio.html" selected>Español</option>
                   <option value="../Inicio/inicio_cat.html">Català</option>
@@ -49,11 +36,10 @@
                 </select>
               </div>
             <!-- Posivilidades dentro de la web -->
-            <a href="../eventos/eventos.php">Eventos</a>
+            <a href="../eventos/eventos.html">Eventos</a>
             <a href="../lugares/Lugares.html">Lugares</a>
-            <button onclick="cuentaBtn()" name="cuenta" id="cuenta">cuenta prueba</button> <!-- Eliminada clase button, estilo general para buttons button -->
+            <a href="../Cuenta/cuanta.php">Cuenta</a>  
             <a href="../Inicio/inicio.html">Inicio</a>     
-            <!-- <a href="../Cuenta/cuenta.php">Cuenta</a>  -->
         </div>
     </header>
 
