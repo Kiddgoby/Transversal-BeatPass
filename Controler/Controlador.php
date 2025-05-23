@@ -16,14 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST["cuenta"])) {
         $UserController->cuenta();
         echo __LINE__;
-    } elseif (isset($_POST["update"])) {
-        $email = $_SESSION["email"] ?? null;
-        $nameN = trim($_POST["nameN"]);
-        $password = trim($_POST["password"]) ?: null;
-        $imagen = $_FILES["imagen"] ?? null;
-
-        $UserController->update($email, $nameN, $password, $imagen);
-        echo __LINE__;
     }
 }
 
@@ -49,17 +41,17 @@ class UserController {
         $email = trim($_POST["email"]);
         $password = trim($_POST["password"]);
 
-        $query = "SELECT nameN, email, contrasena FROM usuarios WHERE email = ? AND contrasena = ?";
+        $query = "SELECT email, contrasena FROM usuarios WHERE email = ? AND contrasena = ?";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([$email, $password]);
         $row = $stmt->fetch();
 
         if ($row) {
             $_SESSION["logged"] = true;
-            $_SESSION["nameN"] = $row["nameN"];
             $_SESSION["email"] = $row["email"];
             $_SESSION["password"] = $row["contrasena"];
-            header("Location: ../View/Inicio/inicio.php");
+
+            header("Location: ../View/Inicio/inicio.html");
             return true;
         } else {
             $_SESSION["logged"] = false;
@@ -126,45 +118,19 @@ class UserController {
 
     public function cuenta(): void {
         if ($_SESSION["email"] == "administrador1234@gmail.com") {
-            $_SESSION["admin"] = true;
-            header("Location: ../View/Cuenta/cuenta_Admin.php");         
-        }
-        exit();
-    }
+            header("Location: ../Cuenta/cuentaAdmin.html");
+        } else {
+            $query = "SELECT imagen FROM usuarios WHERE email = ?";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute([$_SESSION["email"]]);
+            $row = $stmt->fetch();
 
-    public function update(string $email, string $nameN, ?string $password, ?array $imagen): void {
-        $sql = "UPDATE usuarios SET nameN = ?";
-        $params = [$nameN];
-
-        if (!empty($password)) {
-            $sql .= ", contrasena = ?";
-            $params[] = $password;
-        }
-
-        $imagenNombre = null;
-
-        if ($imagen && $imagen["error"] == 0) {
-            $imagenTmp = $imagen["tmp_name"];
-            $imagenNombre = basename($imagen["name"]);
-            $rutaDestino = "../uploads/" . $imagenNombre;
-
-            if (!file_exists("../uploads")) {
-                mkdir("../uploads", 0777, true);
+            if ($row) {
+                $_SESSION["imagen"] = $row["imagen"];
             }
 
-            if (move_uploaded_file($imagenTmp, $rutaDestino)) {
-                $sql .= ", imagen = ?";
-                $params[] = $imagenNombre;
-            }
+            header("Location: ../Cuenta/cuenta.php");
         }
-
-        $sql .= " WHERE email = ?";
-        $params[] = $email;
-
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($params);
-
-        header("Location: ../Cuenta/cuenta.php");
         exit();
     }
 }
