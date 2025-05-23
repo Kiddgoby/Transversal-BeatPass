@@ -15,22 +15,25 @@ try {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Eventos Registrados</title>
-    <style>
-        .evento {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 10px 0;
-        }
+    <!--link para usa funciones de bootsrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .evento img {
-            max-width: 200px;
-            height: auto;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Pass</title>
+    <link rel="icon" type="image/png" href="../logoBilleteArnau.png">
+
+    <link rel="stylesheet" href="../headerComun.css">
+    <link rel="stylesheet" href="StyleE.css">
+    
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
+    <?php include '../header.php'; ?>
+    
     <h1>Eventos Registrados</h1>
 
     <?php if (count($eventos) > 0): ?>

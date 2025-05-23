@@ -51,7 +51,7 @@ header .izquierda {
 }
 
 header .izquierda img {
-    width: 5rem;
+    width: 8rem;
     height: auto;
     transform: transform var(--transition-speed) ease;
 }
@@ -73,6 +73,7 @@ header .rigth {
     justify-content: center;
     margin-top: var(--padding-standard);
     align-items: center;
+    flex-direction: row;
 }
 
 header a {
@@ -84,6 +85,11 @@ header a {
     border-radius: var(--border-radius-small);
     transition: color 0.3s ease;
 }
+
+#cabeza{
+    display: none;
+}
+
 /* Hovers */
 header a:hover {
     color: var(--color-primary);
@@ -92,6 +98,7 @@ header a:hover {
 header .izquierda img:hover{
     transform: scale(1.1);
 }
+
 
 /* fin hovers */
 .idioma-selector select {
@@ -119,5 +126,15 @@ header .izquierda img:hover{
     header .left {
         width: 50%;
         justify-content: space-between;
+    }
+
+    #cabeza{
+        display: block;
+    }
+
+    header .izquierda img {
+        width: 5rem;
+        height: auto;
+        transform: transform var(--transition-speed) ease;
     }
 }

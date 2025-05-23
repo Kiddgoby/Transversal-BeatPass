@@ -43,25 +43,7 @@ if ($email) {
 </head>
 
 <body>
-<header>
-    <div class="left">
-        <div class="izquierda">
-            <a href="../Inicio/inicio.html">
-                <img src="../logoBilleteArnau.png" alt="">
-            </a>    
-        </div>
-    </div>
-
-    <h1 class="titulo">Beat Pass</h1>
-    
-    <div class="rigth">    
-        <!-- Posivilidades dentro de la web -->
-        <a href="../eventos/eventos.php">Eventos</a>
-        <a href="../lugares/Lugares.html">Lugares</a>
-        <a href="../Cuenta/cuenta.php">Cuenta</a>  
-        <a href="../Inicio/inicio.html">Inicio</a>      
-    </div>
-</header>
+    <?php include '../header.php'; ?>
 
     <main class="pagina">
         <article class="perfil">
@@ -84,12 +66,14 @@ if ($email) {
             
             <div class="posibilidades">
                 <a href="../Inicio/inicio.html">
-                    <button type="submit" name="misEventos" id="misEventos" class="button">Mis Eventos</button>
+                    <button type="submit" name="misEventos" id="misEventos" class="button">Administracion de eventos</button>
                 </a>
             
-                <a href="../Cuenta/cuentaUpdateDatos.php">
+                
+                <a href="../">
                     <button type="submit" name="Modificar" id="Modificar" class="button">Modificar Perfil</button>
                 </a>
+
                 <form action="../../Controler/Controlador.php" method="POST">
                     <button type="submit" name="logout" id="logout" class="button">Cerrar Sesión</button>
                 </form>
